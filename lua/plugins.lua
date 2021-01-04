@@ -24,6 +24,12 @@ return require('packer').startup({
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
 
+    use 'kyazdani42/nvim-web-devicons'
+    use 'akinsho/nvim-bufferline.lua'
+    use 'glepnir/galaxyline.nvim'
+
+    use 'kyazdani42/nvim-tree.lua'
+
   end,
   config = {
       display = {
