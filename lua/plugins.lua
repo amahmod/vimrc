@@ -18,17 +18,32 @@ return require('packer').startup({
 
 
     -- " colorschemes
-    use 'numtostr/gruvbox-material'
+    -- use 'numtostr/gruvbox-material'
     use 'glepnir/zephyr-nvim'
 
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      requires = {
+        {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}
+      },
+      config = 'require("plugins._treesitter")',
+      event = "VimEnter *"
+    }
 
     use 'kyazdani42/nvim-web-devicons'
-    use 'akinsho/nvim-bufferline.lua'
-    use 'glepnir/galaxyline.nvim'
+    use { 'akinsho/nvim-bufferline.lua', config = 'require("plugins._bufferline")' }
+    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
+    use { 'glepnir/galaxyline.nvim', config = 'require("plugins._statusline")' }
 
-    use 'kyazdani42/nvim-tree.lua'
+    use {'norcalli/nvim-colorizer.lua', config='require("plugins._colorizer")'}
+    use {'rhysd/accelerated-jk',}
+
+    use { 'itchyny/vim-cursorword', event = 'BufReadPre,BufNewFile *', config = 'require("plugins._cursorword")' }
+
+    use {
+      'airblade/vim-gitgutter',
+      config = 'require("plugins._gitgutter")'
+    }
 
   end,
   config = {
