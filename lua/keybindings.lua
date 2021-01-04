@@ -66,8 +66,16 @@ end
 
 function mapping:load_plugin_define()
   self.plugin = {
-    ["n|]h"] = map_cmd('<plug>(GitGutterNextHunk)'),
-    ["n|[h"] = map_cmd('<plug>(GitGutterPrevHunk)')
+    -- Plugn gitgutter
+    ["n|]g"] = map_cmd('<plug>(GitGutterNextHunk)'),
+    ["n|[g"] = map_cmd('<plug>(GitGutterPrevHunk)'),
+    ["n|<leader>hf"] = map_cr('GitGutterFold'):with_noremap(),
+    -- Plugin nvim-tree
+    ["n|<Leader>e"]      = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
+    ["n|<Leader>F"]      = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
+    -- Plugin acceleratedjk
+    ["n|j"]              = map_cmd('<Plug>(accelerated_jk_gj)'):with_silent(),
+    ["n|k"]              = map_cmd('<Plug>(accelerated_jk_gk)'):with_silent(),
   };
 end
 
