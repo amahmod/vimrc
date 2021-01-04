@@ -31,7 +31,18 @@ return require('packer').startup({
     }
 
     use 'kyazdani42/nvim-web-devicons'
-    use { 'akinsho/nvim-bufferline.lua', config = 'require("plugins._bufferline")' }
+    use { 'akinsho/nvim-bufferline.lua',
+      config = function()
+        require'bufferline'.setup{
+          options = {
+            modified_icon = '✥',
+            buffer_close_icon = '',
+            mappings = true,
+            always_show_bufferline = false,
+          };
+        }
+      end
+    }
     use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
     use { 'glepnir/galaxyline.nvim', config = 'require("plugins._statusline")' }
 
