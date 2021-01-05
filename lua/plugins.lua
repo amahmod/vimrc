@@ -19,6 +19,7 @@ return require('packer').startup({
 
     -- " colorschemes
     -- use 'numtostr/gruvbox-material'
+    use 'morhetz/gruvbox'
     use 'glepnir/zephyr-nvim'
 
     use {
@@ -43,6 +44,7 @@ return require('packer').startup({
         }
       end
     }
+    use { 'glepnir/indent-guides.nvim' }
     use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
     use { 'glepnir/galaxyline.nvim', config = 'require("plugins._statusline")' }
     use {'norcalli/nvim-colorizer.lua', config='require("plugins._colorizer")'}
