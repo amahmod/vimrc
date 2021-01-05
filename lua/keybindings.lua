@@ -91,6 +91,7 @@ function mapping:load_plugin_define()
     ["n|<leader>gB"] = map_cr('Git blame'):with_silent(),
     ["n|<leader>gb"] = map_cr('Git branch'):with_silent(),
     ["n|<leader>gf"] = map_cr('Gfetch'):with_silent(),
+    ["n|<leader>gl"] = map_cr('Git log'):with_silent(),
     -- Plugin vista
     ["n|<leader>to"] = map_cr('Vista!!'):with_silent(),
     ["n|<leader>fo"] = map_cr('Vista finder fzf'):with_silent(),
