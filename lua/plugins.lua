@@ -120,6 +120,11 @@ return require('packer').startup({
     -- use { 'ojroques/nvim-lspfuzzy' }
 
     use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
+    use {
+      'prettier/vim-prettier',
+      ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' },
+      run = 'yarn install'
+    }
   end,
   config = {
       display = {
