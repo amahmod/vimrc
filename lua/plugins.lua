@@ -63,6 +63,7 @@ return require('packer').startup({
     use  'tpope/vim-fugitive'
     use  'vimwiki/vimwiki'
     use  'mbbill/undotree'
+    use 'junegunn/vim-easy-align'
     use { 
       'liuchengxu/vista.vim',
       config = function()
@@ -109,7 +110,6 @@ return require('packer').startup({
     -- use { 'ojroques/nvim-lspfuzzy' }
 
     use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
-
   end,
   config = {
       display = {
