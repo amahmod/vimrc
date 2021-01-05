@@ -63,7 +63,6 @@ return require('packer').startup({
     use  'tpope/vim-fugitive'
     use  'vimwiki/vimwiki'
     use  'mbbill/undotree'
-    use 'junegunn/vim-easy-align'
     use { 
       'liuchengxu/vista.vim',
       config = function()
@@ -94,6 +93,23 @@ return require('packer').startup({
           vim.cmd[[ command! -bang -nargs=* LinesWithPreview  call fzf#vim#grep('rg --with-filename --column --line-number --no-heading --color=always --smart-case . '.fnameescape(expand('%')), 1,  fzf#vim#with_preview({'options': '--delimiter : --nth 4.. '}, 'up:50%', '?'), 1) ]]
         end
       }}
+    -- LSP / Completion
+    use {
+      'neovim/nvim-lspconfig',
+      config = 'require("lsp")'
+    }
+    use {
+      'nvim-lua/completion-nvim',
+      -- {'steelsojka/completion-buffers'},
+      -- {'aca/completion-tabnine', run =  './install.sh'},
+      -- {'nvim-treesitter/completion-treesitter'},
+      -- {'kraistijanhusak/completion-tags'},
+      config = 'require("plugins._completion")'
+    }
+    -- use { 'ojroques/nvim-lspfuzzy' }
+
+    use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
+
   end,
   config = {
       display = {
