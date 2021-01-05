@@ -94,6 +94,28 @@ function mapping:load_plugin_define()
     -- Plugin vista
     ["n|<leader>to"] = map_cr('Vista!!'):with_silent(),
     ["n|<leader>fo"] = map_cr('Vista finder fzf'):with_silent(),
+    -- Plugin fzf.vim
+    ["n|<C-p>"] = map_cr('Files'):with_silent(),
+    ["n|<leader>ff"] = map_cr('GFiles'):with_silent(),
+    ["n|<leader>fc"] = map_cr('Commands'):with_silent(),
+    ["n|<leader>fh"] = map_cr('History'):with_silent(),
+    ["n|<leader>f:"] = map_cr('History:'):with_silent(),
+    ["n|<leader>f/"] = map_cr('History/'):with_silent(),
+    ["n|<leader>fm"] = map_cr('Marks'):with_silent(),
+    ["n|<leader>tc"] = map_cr('Colors'):with_silent(),
+    ["n|<leader>fb"] = map_cr('Buffers'):with_silent(),
+    ["n|<leader>fl"] = map_cr('BLines'):with_silent(),
+    ["n|<leader>fC"] = map_cr('Commits'):with_silent(),
+    ["n|<leader>fw"] = map_cr('LinesWithPreview'):with_silent(),
+    ["i|<C-x><C-k>"] = map_cmd('<Plug>(fzf-complete-word)'):with_silent(),
+    ["i|<C-x><C-f>"] = map_cmd('<Plug>(fzf-complete-path)'):with_silent(),
+    ["i|<C-x><C-j>"] = map_cmd('<Plug>(fzf-complete-file-rg)'):with_silent(),
+    ["i|<C-x><C-l>"] = map_cmd('<Plug>(fzf-complete-line)'):with_silent(),
+    -- Plugin undotree
+    ["n|<leader>tu"] = map_cr('UndotreeToggle'):with_noremap():with_silent(),
+    -- Plugin easyalign
+    ["x|ga"] = map_cmd('<Plug>(EasyAlign)'):with_silent(),
+    ["n|ga"] = map_cmd('<Plug>(EasyAlign)'):with_silent(),
   };
 end
 
