@@ -60,8 +60,10 @@ return require('packer').startup({
         vim.g.EasyMotion_use_smartsign_us = 1
       end
     }
-    use { 'tpope/vim-fugitive' }
-    use { 'vimwiki/vimwiki' }
+    use  'tpope/vim-fugitive'
+    use  'vimwiki/vimwiki'
+    use  'mbbill/undotree'
+    use 'junegunn/vim-easy-align'
     use { 
       'liuchengxu/vista.vim',
       config = function()
@@ -79,7 +81,14 @@ return require('packer').startup({
         }
       end
     }
-
+    use { 
+      'junegunn/fzf', 
+      {
+        'junegunn/fzf.vim',
+        config = function()
+          vim.g.fzf_checkout_git_options = '--sort=-committerdate'
+        end
+      }}
   end,
   config = {
       display = {
