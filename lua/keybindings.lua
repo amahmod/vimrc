@@ -113,6 +113,8 @@ function mapping:load_plugin_define()
     -- Plugin easyalign
     ["x|ga"] = map_cmd('<Plug>(EasyAlign)'):with_silent(),
     ["n|ga"] = map_cmd('<Plug>(EasyAlign)'):with_silent(),
+    -- Plugin vim-vsnip
+    ["i|<TAB>"]      = map_cmd([[pumvisible() ? "\<C-n>" : vsnip#available(1) ?"\<Plug>(vsnip-expand-or-jump)" : v:lua.check_back_space() ? "\<TAB>" : completion#trigger_completion()]]):with_expr():with_silent(),
   };
 end
 

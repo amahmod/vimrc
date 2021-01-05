@@ -30,6 +30,10 @@ return require('packer').startup({
       config = 'require("plugins._treesitter")',
       event = "VimEnter *"
     }
+    use {
+    'hrsh7th/vim-vsnip',
+    requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'}
+    }
 
     use 'kyazdani42/nvim-web-devicons'
     use { 'akinsho/nvim-bufferline.lua',
@@ -94,6 +98,7 @@ return require('packer').startup({
           vim.g.fzf_layout = { window = { width = 0.8,  height =  0.8} }
 
           vim.cmd[[ command! -bang -nargs=* LinesWithPreview  call fzf#vim#grep('rg --with-filename --column --line-number --no-heading --color=always --smart-case . '.fnameescape(expand('%')), 1,  fzf#vim#with_preview({'options': '--delimiter : --nth 4.. '}, 'up:50%', '?'), 1) ]]
+          vim.cmd [[ command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0) ]]
         end
       }}
     -- LSP / Completion
