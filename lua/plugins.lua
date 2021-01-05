@@ -62,6 +62,7 @@ return require('packer').startup({
         vim.g.EasyMotion_use_smartsign_us = 1
       end
     }
+    use 'christoomey/vim-tmux-navigator'
     use  'tpope/vim-fugitive'
     use  'vimwiki/vimwiki'
     use  'mbbill/undotree'
