@@ -76,6 +76,24 @@ function mapping:load_plugin_define()
     -- Plugin acceleratedjk
     ["n|j"]              = map_cmd('<Plug>(accelerated_jk_gj)'):with_silent(),
     ["n|k"]              = map_cmd('<Plug>(accelerated_jk_gk)'):with_silent(),
+    -- Plugin easymotion
+    ["n|<leader><leader>f"] = map_cmd('<Plug>(easymotion-ovewin-f)'):with_silent(),
+    ["n|<leader><leader>l"] = map_cmd('<Plug>(easymotion-overwin-line)'):with_silent(),
+    ["n|<leader><leader>w"] = map_cmd('<Plug>(easymotion-bd-w)'):with_silent(),
+    -- Plugin fugitive
+    ["n|<leader>ga"] = map_cr('Git add %:p'):with_silent(),
+    ["n|<leader>gg"] = map_cr('Git'):with_silent(),
+    ["n|<leader>gc"] = map_cr('Git commit'):with_silent(),
+    ["n|<leader>gd"] = map_cr('Gdiffsplit'):with_silent(),
+    ["n|<leader>ge"] = map_cr('Gedit'):with_silent(),
+    ["n|<leader>gr"] = map_cr('Gread'):with_silent(),
+    ["n|<leader>gw"] = map_cr('Gwrite'):with_silent(),
+    ["n|<leader>gB"] = map_cr('Git blame'):with_silent(),
+    ["n|<leader>gb"] = map_cr('Git branch'):with_silent(),
+    ["n|<leader>gf"] = map_cr('Gfetch'):with_silent(),
+    -- Plugin vista
+    ["n|<leader>to"] = map_cr('Vista!!'):with_silent(),
+    ["n|<leader>fo"] = map_cr('Vista finder fzf'):with_silent(),
   };
 end
 
