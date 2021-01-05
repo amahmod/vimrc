@@ -110,10 +110,13 @@ function mapping:load_plugin_define()
     ["i|<C-x><C-l>"] = map_cmd('<Plug>(fzf-complete-line)'):with_silent(),
     -- Plugin undotree
     ["n|<leader>tu"] = map_cr('UndotreeToggle'):with_noremap():with_silent(),
+    -- Plugin prettier
+    ["n|<leader>F"] = map_cr('Prettier'):with_noremap():with_silent(),
     -- Plugin easyalign
     ["x|ga"] = map_cmd('<Plug>(EasyAlign)'):with_silent(),
     ["n|ga"] = map_cmd('<Plug>(EasyAlign)'):with_silent(),
     -- Plugin vim-vsnip
+    ["s|<TAB>"]      = map_cmd([[pumvisible() ? "\<C-n>" : vsnip#available(1) ?"\<Plug>(vsnip-expand-or-jump)" : v:lua.check_back_space() ? "\<TAB>" : completion#trigger_completion()]]):with_expr():with_silent(),
     ["i|<TAB>"]      = map_cmd([[pumvisible() ? "\<C-n>" : vsnip#available(1) ?"\<Plug>(vsnip-expand-or-jump)" : v:lua.check_back_space() ? "\<TAB>" : completion#trigger_completion()]]):with_expr():with_silent(),
   };
 end
