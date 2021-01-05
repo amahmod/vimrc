@@ -63,7 +63,6 @@ return require('packer').startup({
     use  'tpope/vim-fugitive'
     use  'vimwiki/vimwiki'
     use  'mbbill/undotree'
-    use 'junegunn/vim-easy-align'
     use { 
       'liuchengxu/vista.vim',
       config = function()
