@@ -58,7 +58,7 @@ return require('packer').startup({
     use {'rhysd/accelerated-jk',}
     use { 'itchyny/vim-cursorword', event = 'BufReadPre,BufNewFile *', config = 'require("plugins._cursorword")' }
     use { 'airblade/vim-gitgutter', config = 'require("plugins._gitgutter")' }
-    use { 'tpope/vim-repeat', 'jiangmiao/auto-pairs', 'tpope/vim-surround', 'junegunn/vim-easy-align'}
+    use { 'tpope/vim-repeat', 'jiangmiao/auto-pairs', 'tpope/vim-surround', 'junegunn/vim-easy-align', 'tpope/vim-commentary'}
     use { 
       'easymotion/vim-easymotion',
       config = function()
