@@ -31,8 +31,11 @@ return require('packer').startup({
       event = "VimEnter *"
     }
     use {
-    'hrsh7th/vim-vsnip',
-    requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'}
+      'hrsh7th/vim-vsnip',
+      requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'},
+      config = function()
+        vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
+      end
     }
 
     use 'kyazdani42/nvim-web-devicons'
