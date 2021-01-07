@@ -125,6 +125,7 @@ return require('packer').startup({
       ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' },
       run = 'yarn install'
     }
+    use 'wakatime/vim-wakatime'
   end,
   config = {
       display = {
