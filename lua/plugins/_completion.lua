@@ -9,7 +9,11 @@ vim.g.completion_auto_change_source = 1
 
 vim.g.completion_chain_complete_list = {
   default = {
-    {complete_items = {'lsp', 'snippet', 'tags', 'tabnine' }},
+    {complete_items = {'lsp'}},
+    {complete_items = {'snippet' }},
+    {complete_items = {'tags' }},
+    {complete_items = {'ts'}},
+    {complete_items = {'buffers'}},
     {complete_items = {'path'}, triggered_only = {'/'}},
     {complete_items = {'buffers'}},
   },

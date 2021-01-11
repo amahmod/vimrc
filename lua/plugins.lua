@@ -25,7 +25,8 @@ return require('packer').startup({
     use {
       'nvim-treesitter/nvim-treesitter',
       requires = {
-        {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}
+        {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'},
+        { 'nvim-treesitter/completion-treesitter', after = 'nvim-treesitter' }
       },
       config = 'require("plugins._treesitter")',
       event = "VimEnter *"
@@ -111,10 +112,9 @@ return require('packer').startup({
     }
     use {
       'nvim-lua/completion-nvim',
-      -- {'steelsojka/completion-buffers'},
+      {'steelsojka/completion-buffers'},
       -- {'aca/completion-tabnine', run =  './install.sh'},
-      -- {'nvim-treesitter/completion-treesitter'},
-      -- {'kraistijanhusak/completion-tags'},
+      {'kristijanhusak/completion-tags'},
       config = 'require("plugins._completion")'
     }
     -- use { 'ojroques/nvim-lspfuzzy' }
