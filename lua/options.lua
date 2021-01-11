@@ -1,4 +1,3 @@
-local U = require "utils"
 local global = require "global"
 local g = vim.g
 local go = vim.o
