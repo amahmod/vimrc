@@ -19,7 +19,7 @@ return require('packer').startup({
 
     -- " colorschemes
     -- use 'numtostr/gruvbox-material'
-    use 'morhetz/gruvbox'
+    use 'gruvbox-community/gruvbox'
     use 'glepnir/zephyr-nvim'
 
     use {

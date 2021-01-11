@@ -6,4 +6,3 @@ require('telescope').setup{
     file_sorter = require'telescope.sorters'.get_fzy_sorter,
   }
 }
-print('HI')
