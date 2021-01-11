@@ -107,7 +107,7 @@ return require('packer').startup({
     -- LSP / Completion
     use {
       'neovim/nvim-lspconfig',
-      config = 'require("lsp")'
+      config = 'require("plugins._lsp")'
     }
     use {
       'nvim-lua/completion-nvim',
