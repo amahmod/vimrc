@@ -105,7 +105,7 @@ function mapping:load_plugin_define()
     ['n|<leader>ft']        = map_cr('Telescope current_buffer_tags'):with_silent(),
     ['n|<leader>fT']        = map_cr('Telescope tags'):with_silent(),
     ['n|<leader>fm']        = map_cr('Telescope marks'):with_silent(),
-    ['n|<leader>tm']        = map_cr('Telescope colorscheme'):with_silent(),
+    ['n|<leader>tc']        = map_cr('Telescope colorscheme'):with_silent(),
     ['n|<leader>fq']        = map_cr('Telescope quickfix'):with_silent(),
     ['n|<leader>fl']        = map_cr('Telescope current_buffer_fuzzy_find'):with_silent(),
     ['n|<leader>fr']        = map_cr('Telescope lsp_references'):with_silent(),
