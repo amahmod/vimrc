@@ -1,3 +1,4 @@
+vim.cmd [[ set shortmess+=c ]]
 local strategy = { 'exact', 'substring', 'fuzzy' }
 
 vim.g.completion_enable_auto_popup = 1
@@ -15,7 +16,6 @@ vim.g.completion_chain_complete_list = {
     {complete_items = {'ts'}},
     {complete_items = {'buffers'}},
     {complete_items = {'path'}, triggered_only = {'/'}},
-    {complete_items = {'buffers'}},
   },
   string = {
     {complete_items = {'path'}, triggered_only = {'/'}},

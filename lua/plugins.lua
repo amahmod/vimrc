@@ -105,9 +105,11 @@ return require('packer').startup({
     }
     use {
       'nvim-lua/completion-nvim',
-      {'steelsojka/completion-buffers'},
-      -- {'aca/completion-tabnine', run =  './install.sh'},
-      {'kristijanhusak/completion-tags'},
+      requires = {
+        {'steelsojka/completion-buffers', after = 'completion-nvim'},
+        -- {'aca/completion-tabnine', run =  './install.sh'},
+        {'kristijanhusak/completion-tags', after = 'completion-nvim'},
+      },
       config = 'require("plugins._completion")'
     }
     -- use { 'ojroques/nvim-lspfuzzy' }
