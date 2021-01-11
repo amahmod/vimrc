@@ -91,20 +91,13 @@ return require('packer').startup({
         }
       end
     }
-    use { 
-      'junegunn/fzf', 
-      {
-        'junegunn/fzf.vim',
-        config = function()
-          vim.fn.setenv("FZF_DEFAULT_COMMAND",'rg --files --hidden --follow --no-ignore-vcs -g  "!{node_modules,.git,dist,.cache}"')
-          vim.fn.setenv("FZF_DEFAULT_OPTS","--reverse --preview  'bat --color=always --style=header,grid --line-range :300 {}'")
-          vim.g.fzf_preview_window = "right:60%"
-          vim.g.fzf_layout = { window = { width = 0.8,  height =  0.8} }
 
-          vim.cmd[[ command! -bang -nargs=* LinesWithPreview  call fzf#vim#grep('rg --with-filename --column --line-number --no-heading --color=always --smart-case . '.fnameescape(expand('%')), 1,  fzf#vim#with_preview({'options': '--delimiter : --nth 4.. '}, 'up:50%', '?'), 1) ]]
-          vim.cmd [[ command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0) ]]
-        end
-      }}
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+      config = 'require("plugins._telescope")'
+    }
+
     -- LSP / Completion
     use {
       'neovim/nvim-lspconfig',
