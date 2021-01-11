@@ -115,6 +115,7 @@ local bw_local   = {
   wrap           = false;
   linebreak      = true;
   number         = true;
+  relativenumber = true;
   colorcolumn    = "80";
   foldenable     = true;
   signcolumn     = "yes";
@@ -145,5 +146,4 @@ bind_option(bw_local)
 
 
 -- Map <leader> to space
-U.map("n", "<SPACE>", "<Nop>")
 g.mapleader = " "
