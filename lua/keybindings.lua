@@ -119,6 +119,8 @@ function mapping:load_plugin_define()
     -- Plugin vim-vsnip
     ["s|<TAB>"]             = map_cmd([[pumvisible() ? "\<C-n>" : vsnip#available(1) ?"\<Plug>(vsnip-expand-or-jump)" : v:lua.check_back_space() ? "\<TAB>" : completion#trigger_completion()]]):with_expr():with_silent(),
     ["i|<TAB>"]             = map_cmd([[pumvisible() ? "\<C-n>" : vsnip#available(1) ?"\<Plug>(vsnip-expand-or-jump)" : v:lua.check_back_space() ? "\<TAB>" : completion#trigger_completion()]]):with_expr():with_silent(),
+    -- Plugin vim-jsdoc
+    ["n|<leader>d"]         = map_cmd('<Plug>(jsdoc)'):with_silent(),
   };
 end
 

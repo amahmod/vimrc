@@ -125,6 +125,11 @@ return require('packer').startup({
       ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' },
       run = 'yarn install'
     }
+    use {
+      'heavenshell/vim-jsdoc',
+      ft = {'javascript', 'typescript', 'vue' },
+      run = 'make install'
+    }
     use 'wakatime/vim-wakatime'
   end,
   config = {
