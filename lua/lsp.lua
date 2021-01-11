@@ -104,6 +104,10 @@ lspconfig.sumneko_lua.setup{
   }
 }
 
+
+lspconfig.intelephense.setup{
+  on_attach=on_attach,
+}
 -- require('lspfuzzy').setup {}
 
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
