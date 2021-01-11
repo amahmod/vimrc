@@ -47,6 +47,7 @@ function autocmd.load_autocmds()
       {"BufNewFile,BufRead",".eslintignore"," setf gitignore"},
       -- Automatically run :PackerCompile whenever plugins.lua is updated with an autocommand:
       {"BufWritePost","plugins.lua","PackerCompile"},
+      {"FileType", "gitcommit", "set spell"}
     };
 
     yank = {
