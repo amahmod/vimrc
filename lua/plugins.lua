@@ -22,24 +22,29 @@ return require('packer').startup({
     use 'gruvbox-community/gruvbox'
     use 'glepnir/zephyr-nvim'
 
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      requires = {
-        {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'},
-        { 'nvim-treesitter/completion-treesitter', after = 'nvim-treesitter' }
-      },
-      config = 'require("plugins._treesitter")',
-      event = "VimEnter *"
-    }
-    use {
-      'hrsh7th/vim-vsnip',
-      requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'},
+    use 'kyazdani42/nvim-web-devicons'
+    use { 'glepnir/indent-guides.nvim' }
+    use { 'glepnir/galaxyline.nvim', config = 'require("plugins._statusline")' }
+    use { 'itchyny/vim-cursorword', event = 'BufReadPre,BufNewFile *', config = 'require("plugins._cursorword")' }
+    use { 'tpope/vim-repeat', 'jiangmiao/auto-pairs', 'tpope/vim-surround', 'junegunn/vim-easy-align', 'tpope/vim-commentary'}
+    use {'rhysd/accelerated-jk',}
+    use { 
+      'easymotion/vim-easymotion',
       config = function()
-        vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
+        vim.g.EasyMotion_do_mapping       = 0
+        vim.g.EasyMotion_prompt           = 'Jump to → '
+        vim.g.EasyMotion_keys             = 'fjdkswbeoavn'
+        vim.g.EasyMotion_smartcase        = 1
+        vim.g.EasyMotion_use_smartsign_us = 1
       end
     }
 
-    use 'kyazdani42/nvim-web-devicons'
+    -- Version control
+    use { 'airblade/vim-gitgutter', config = 'require("plugins._gitgutter")' }
+    use  'tpope/vim-fugitive'
+
+    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
+    use {'norcalli/nvim-colorizer.lua', config='require("plugins._colorizer")'}
     use { 'akinsho/nvim-bufferline.lua',
       config = function()
         require'bufferline'.setup{
@@ -52,28 +57,8 @@ return require('packer').startup({
         }
       end
     }
-    use { 'glepnir/indent-guides.nvim' }
-    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
-    use { 'glepnir/galaxyline.nvim', config = 'require("plugins._statusline")' }
-    use {'norcalli/nvim-colorizer.lua', config='require("plugins._colorizer")'}
-    use {'rhysd/accelerated-jk',}
-    use { 'itchyny/vim-cursorword', event = 'BufReadPre,BufNewFile *', config = 'require("plugins._cursorword")' }
-    use { 'airblade/vim-gitgutter', config = 'require("plugins._gitgutter")' }
-    use { 'tpope/vim-repeat', 'jiangmiao/auto-pairs', 'tpope/vim-surround', 'junegunn/vim-easy-align', 'tpope/vim-commentary'}
-    use { 
-      'easymotion/vim-easymotion',
-      config = function()
-        vim.g.EasyMotion_do_mapping       = 0
-        vim.g.EasyMotion_prompt           = 'Jump to → '
-        vim.g.EasyMotion_keys             = 'fjdkswbeoavn'
-        vim.g.EasyMotion_smartcase        = 1
-        vim.g.EasyMotion_use_smartsign_us = 1
-      end
-    }
-    use 'christoomey/vim-tmux-navigator'
-    use  'tpope/vim-fugitive'
-    use  'vimwiki/vimwiki'
-    use  'mbbill/undotree'
+
+    -- Language specific
     use { 
       'liuchengxu/vista.vim',
       config = function()
@@ -91,18 +76,31 @@ return require('packer').startup({
         }
       end
     }
-
     use {
-      'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-      config = 'require("plugins._telescope")'
+      'hrsh7th/vim-vsnip',
+      requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'},
+      config = function()
+        vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
+      end
+    }
+
+    use { 'prettier/vim-prettier', ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' }, run = 'yarn install' }
+    use { 'heavenshell/vim-jsdoc', ft = {'javascript', 'typescript', 'vue' }, run = 'make install' }
+
+    -- Syntax highlighting
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      requires = {
+        {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'},
+        { 'nvim-treesitter/completion-treesitter', after = 'nvim-treesitter' }
+      },
+      config = 'require("plugins._treesitter")',
+      event = "VimEnter *"
     }
 
     -- LSP / Completion
-    use {
-      'neovim/nvim-lspconfig',
-      config = 'require("plugins._lsp")'
-    }
+    use { 'neovim/nvim-lspconfig', config = 'require("plugins._lsp")' }
+    use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
     use {
       'nvim-lua/completion-nvim',
       requires = {
@@ -114,18 +112,14 @@ return require('packer').startup({
     }
     -- use { 'ojroques/nvim-lspfuzzy' }
 
-    use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
-    use {
-      'prettier/vim-prettier',
-      ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' },
-      run = 'yarn install'
-    }
-    use {
-      'heavenshell/vim-jsdoc',
-      ft = {'javascript', 'typescript', 'vue' },
-      run = 'make install'
-    }
+
+    -- Tools
+    use 'christoomey/vim-tmux-navigator'
+    use 'vimwiki/vimwiki'
+    use 'mbbill/undotree'
     use 'wakatime/vim-wakatime'
+    use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}, config = 'require("plugins._telescope")' }
+
   end,
   config = {
       display = {
