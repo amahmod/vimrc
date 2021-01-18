@@ -119,6 +119,8 @@ return require('packer').startup({
     use 'mbbill/undotree'
     use 'wakatime/vim-wakatime'
     use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}, config = 'require("plugins._telescope")' }
+    use { 'metakirby5/codi.vim' }
+    use { 'mattn/vim-gist', requires = {'/mattn/webapi-vim'} }
 
   end,
   config = {

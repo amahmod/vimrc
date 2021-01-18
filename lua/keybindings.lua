@@ -86,7 +86,7 @@ function mapping:load_plugin_define()
     ["n|<leader>gr"]        = map_cr('Gread'):with_silent(),
     ["n|<leader>gw"]        = map_cr('Gwrite'):with_silent(),
     ["n|<leader>gB"]        = map_cr('Git blame'):with_silent(),
-    ["n|<leader>gb"]        = map_cr('Git branch'):with_silent(),
+    -- ["n|<leader>gb"]        = map_cr('Git branch'):with_silent(),
     ["n|<leader>gf"]        = map_cr('Gfetch'):with_silent(),
     ["n|<leader>gl"]        = map_cr('Git log'):with_silent(),
     -- Plugin vista
@@ -117,7 +117,6 @@ function mapping:load_plugin_define()
     ['n|<leader>gb']        = map_cr('Telescope git_branches'):with_silent(),
     ['n|<leader>gs']        = map_cr('Telescope git_status'):with_silent(),
     ['n|<leader>fo']        = map_cr('Telescope treesitter'):with_silent(),
-
 
     -- Plugin undotree
     ["n|<leader>tu"]        = map_cr('UndotreeToggle'):with_noremap():with_silent(),
