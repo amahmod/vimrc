@@ -26,15 +26,8 @@ require'compe'.setup {
   };
 }
 
-local map = function(type, key, value)
-  vim.fn.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true});
-end
-
-map('i', '<silent><expr> <C-Space>', '<cmd>compe#complete()')
-map('i', '<silent><expr> <CR>',     "compe#confirm('<CR>')")
-map('i', '<silent><expr> <C-e>',  "compe#close('<C-e>')")
-map('i', '<silent><expr> <C-f>',     "compe#scroll({ 'delta': +4 })")
-map('i', '<silent><expr> <C-d>',     "compe#scroll({ 'delta': -4 })")
-
-print('HI THERE')
-  print("LSP started.");
+vim.cmd [[ inoremap <silent><expr> <C-Space> compe#complete() ]]
+vim.cmd [[ inoremap <silent><expr> <CR>      compe#confirm('<CR>') ]]
+vim.cmd [[ inoremap <silent><expr> <C-e>     compe#close('<C-e>') ]]
+vim.cmd [[ inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 }) ]]
+vim.cmd [[ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 }) ]]
