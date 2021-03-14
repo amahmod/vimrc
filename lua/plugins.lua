@@ -59,6 +59,16 @@ return require('packer').startup({
     }
 
     -- Language specific
+
+    -- Markdown
+    use {
+      'iamcco/markdown-preview.nvim',
+      run =  'cd app && yarn install',
+      config = function()
+        vim.cmd [[ let g:mkdp_filetypes = ['markdown', 'vimwiki'] ]]
+      end
+    }
+
     use { 
       'liuchengxu/vista.vim',
       config = function()

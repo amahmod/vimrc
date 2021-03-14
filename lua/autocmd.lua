@@ -25,6 +25,7 @@ function autocmd.load_autocmds()
       {"BufWritePre","MERGE_MSG","setlocal noundofile"};
       {"BufWritePre","*.tmp","setlocal noundofile"};
       {"BufWritePre","*.bak","setlocal noundofile"};
+      {"BufNewFile,BufRead", "*.md", "let g:mkdp_filetypes=['markdown', 'vimwiki']"}
     };
 
     wins = {
