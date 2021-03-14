@@ -16,18 +16,19 @@ return require('packer').startup({
     -- Packer can manage itself as an optional plugin
     use { 'wbthomason/packer.nvim', opt = true }
 
-
     -- " colorschemes
     -- use 'numtostr/gruvbox-material'
     use 'gruvbox-community/gruvbox'
     use 'glepnir/zephyr-nvim'
 
     use 'kyazdani42/nvim-web-devicons'
-    use { 'glepnir/indent-guides.nvim' }
+    use 'glepnir/indent-guides.nvim'
+    use 'rhysd/accelerated-jk' 
     use { 'glepnir/galaxyline.nvim', config = 'require("plugins._statusline")' }
     use { 'itchyny/vim-cursorword', event = 'BufReadPre,BufNewFile *', config = 'require("plugins._cursorword")' }
-    use { 'tpope/vim-repeat', 'jiangmiao/auto-pairs', 'tpope/vim-surround', 'junegunn/vim-easy-align', 'tpope/vim-commentary'}
-    use {'rhysd/accelerated-jk',}
+    use { 'tpope/vim-repeat', 'jiangmiao/auto-pairs', 'tpope/vim-surround', 'junegunn/vim-easy-align', 'tpope/vim-commentary' }
+    use {'norcalli/nvim-colorizer.lua', config='require("plugins._colorizer")'}
+
     use { 
       'easymotion/vim-easymotion',
       config = function()
@@ -38,37 +39,17 @@ return require('packer').startup({
         vim.g.EasyMotion_use_smartsign_us = 1
       end
     }
-
     -- Version control
     use { 'airblade/vim-gitgutter', config = 'require("plugins._gitgutter")' }
     use  'tpope/vim-fugitive'
-
-    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
-    use {'norcalli/nvim-colorizer.lua', config='require("plugins._colorizer")'}
-    use { 'akinsho/nvim-bufferline.lua',
-      config = function()
-        require'bufferline'.setup{
-          options = {
-            modified_icon = '✥',
-            buffer_close_icon = '',
-            mappings = true,
-            always_show_bufferline = true,
-          };
-        }
-      end
-    }
-
-    -- Language specific
-
-    -- Markdown
-    use {
-      'iamcco/markdown-preview.nvim',
-      run =  'cd app && yarn install',
-      config = function()
-        vim.cmd [[ let g:mkdp_filetypes = ['markdown', 'vimwiki'] ]]
-      end
-    }
-
+    use { 'mattn/vim-gist', requires = {'/mattn/webapi-vim'} }
+    -- Code formatting
+    use { 'prettier/vim-prettier', ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' }, run = 'yarn install' }
+    -- Tools
+    use 'christoomey/vim-tmux-navigator'
+    use 'vimwiki/vimwiki'
+    use 'mbbill/undotree'
+    use 'wakatime/vim-wakatime'
     use { 
       'liuchengxu/vista.vim',
       config = function()
@@ -93,10 +74,21 @@ return require('packer').startup({
         vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
       end
     }
-
-    use { 'prettier/vim-prettier', ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' }, run = 'yarn install' }
-    use { 'heavenshell/vim-jsdoc', ft = {'javascript', 'typescript', 'vue' }, run = 'make install' }
-
+    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins._nvim-tree")'}
+    use { 'akinsho/nvim-bufferline.lua',
+      config = function()
+        require'bufferline'.setup{
+          options = {
+            modified_icon = '✥',
+            buffer_close_icon = '',
+            mappings = true,
+            always_show_bufferline = true,
+          };
+        }
+      end
+    }
+    -- Fuzzy finder
+    use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}, config = 'require("plugins._telescope")' }
     -- Syntax highlighting
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -107,31 +99,36 @@ return require('packer').startup({
       config = 'require("plugins._treesitter")',
       event = "VimEnter *"
     }
+    -- Markdown
+    use {
+      'iamcco/markdown-preview.nvim',
+      run =  'cd app && yarn install',
+      config = function()
+        vim.cmd [[ let g:mkdp_filetypes = ['markdown', 'vimwiki'] ]]
+      end
+    }
+    -- Javascript
+    use { 'metakirby5/codi.vim' }
+    use { 'heavenshell/vim-jsdoc', ft = {'javascript', 'typescript', 'vue' }, run = 'make install' }
+    -- LSP
+    use { 'neovim/nvim-lspconfig', config = 'require("plugins._lsp")' }
+    use { 'glepnir/lspsaga.nvim', config = 'require("plugins._lspsaga")' }
+
+    -- Completion
 
     -- LSP / Completion
-    use { 'neovim/nvim-lspconfig', config = 'require("plugins._lsp")' }
-    use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
-    use {
-      'nvim-lua/completion-nvim',
-      requires = {
-        {'steelsojka/completion-buffers', after = 'completion-nvim'},
-        -- {'aca/completion-tabnine', run =  './install.sh'},
-        {'kristijanhusak/completion-tags', after = 'completion-nvim'},
-      },
-      config = 'require("plugins._completion")'
-    }
+    
+    -- use {'RishabhRD/popfix', 'RishabhRD/nvim-lsputils'}
+    -- use {
+    --   'nvim-lua/completion-nvim',
+    --   requires = {
+    --     {'steelsojka/completion-buffers', after = 'completion-nvim'},
+    --     -- {'aca/completion-tabnine', run =  './install.sh'},
+    --     {'kristijanhusak/completion-tags', after = 'completion-nvim'},
+    --   },
+    --   config = 'require("plugins._completion")'
+    -- }
     -- use { 'ojroques/nvim-lspfuzzy' }
-
-
-    -- Tools
-    use 'christoomey/vim-tmux-navigator'
-    use 'vimwiki/vimwiki'
-    use 'mbbill/undotree'
-    use 'wakatime/vim-wakatime'
-    use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}, config = 'require("plugins._telescope")' }
-    use { 'metakirby5/codi.vim' }
-    use { 'mattn/vim-gist', requires = {'/mattn/webapi-vim'} }
-
   end,
   config = {
       display = {
