@@ -115,6 +115,7 @@ return require('packer').startup({
     use { 'glepnir/lspsaga.nvim', config = 'require("plugins._lspsaga")' }
 
     -- Completion
+    use { 'hrsh7th/nvim-compe', config = 'require("plugins._compe")' }
 
     -- LSP / Completion
     
