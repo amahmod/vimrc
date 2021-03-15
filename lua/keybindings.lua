@@ -1,0 +1,33 @@
+local map = function(mode, key, value)
+  vim.api.nvim_set_keymap(mode,key,value,{noremap = true, silent = true});
+end
+
+-- General Keybindings
+map('n', '<leader>s', ':w<CR>')
+map('n', '<leader>x', ':x<CR>')
+map('n', '<leader>wq', ':wq!<CR>')
+map('n', '<leader>q', ':q!<CR>')
+map('n', '<leader>Y', ':y$<CR>')
+map('n', '<leader>gp', ':`[v`]<CR>')
+map('n', '<leader>bo', ':w <bar> %bd <bar> e# <bar> bd#<CR>')
+map('n', '<leader>ba', ':bufdo bd<CR>')
+map('n', '<leader>ws', ':sp<CR>')
+map('n', '<leader>wv', ':vs<CR>')
+map("n", "<leader>wH",'<C-w>H')
+map("n", "<leader>wJ",'<C-w>J')
+map("n", "<leader>wK",'<C-w>K')
+map("n", "<leader>wL",'<C-w>L')
+map("n", "<leader>wx",'<C-w>x')
+map("n", "<leader>wc",'<C-w>c')
+map("n", "<leader>wo",'<C-w>o')
+map("n", "<leader>wR",'<C-w>R')
+
+map("n","]b",':bp<CR>')
+map("n", "[b",':bn<CR>')
+map("n", "]w", 'WhitespaceNext')
+map("n", "[w",'WhitespacePrev')
+map("n", "<C-w>[",'vertical resize -5')
+map("n", "<C-w>]", 'vertical resize +5')
+map("n", "<Leader>S",'SessionSave')
+map("n", "<Leader>Sl",'SessionLoad')
+map("n", "<CR>",'nohlsearch')

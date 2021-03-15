@@ -42,6 +42,7 @@ local bw_local   = {
   softtabstop    = -1;
   wrap           = false;
   number         = true;
+  relativenumber = true;
   colorcolumn    = "200";
   foldenable     = true;
   signcolumn     = "yes:2";
