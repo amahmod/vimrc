@@ -36,8 +36,17 @@ return require('packer').startup({
     -- Color highlight
     use { 'norcalli/nvim-colorizer.lua', config='require("plugins.nvim-colorizer")' }
 
+    -- Autocomplete
+    use { 'hrsh7th/nvim-compe', config = 'require("plugins.compe")' }
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-media-files.nvim'}, config = 'require("plugins.telescope")' }
+
+
+    -- LSP
+    use  { 'neovim/nvim-lspconfig', requires = {  'glepnir/lspsaga.nvim',  'onsails/lspkind-nvim',  'kosayoda/nvim-lightbulb' }, config = 'require("plugins.lsp")'  }
 
   end,
   config = {
