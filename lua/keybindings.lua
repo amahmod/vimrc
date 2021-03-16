@@ -4,7 +4,7 @@ end
 
 -- General Keybindings
 map('n', '<leader>s', ':w<CR>')
-map('n', '<leader>x', ':x<CR>')
+map('n', '<leader>x', ':bw<CR>')
 map('n', '<leader>wq', ':wq!<CR>')
 map('n', '<leader>q', ':q!<CR>')
 map('n', '<leader>Y', ':y$<CR>')
@@ -38,16 +38,12 @@ map("n", "<CR>",'nohlsearch')
 --  PLUGIN SPECIFIC KEYBINDINGS
 ------------------------------------
 
--- Barbar (https://github.com/romgrk/barbar.nvim)
-map('n', '<TAB>',':BufferNext<CR>')
-map('n', '<S-TAB>', ':BufferPrevious<CR>')
-map('n', '<C-s>', ':BufferPick<CR>')
-map('n', '<leader>1', ':BufferGoto 1<CR>')
-map('n', '<leader>2', ':BufferGoto 2<CR>')
-map('n', '<leader>3', ':BufferGoto 3<CR>')
-map('n', '<leader>4', ':BufferGoto 4<CR>')
-map('n', '<leader>5', ':BufferGoto 5<CR>')
-map('n', '<leader>6', ':BufferGoto 6<CR>')
+-- Nvim Bufferline
+map('n', 'bn', ':BufferLineCycleNext<CR>')
+map('n', 'bp', ':BufferLineCyclePrev<CR>')
+map('n', 'be', ':BufferLineSortByExtension<CR>')
+map('n', 'bd', ':BufferLineSortByDirectory<CR>')
+map('n', 'bb', ':BufferLinePick<CR>')
 
 -- Nvim-tree
 map('n', '<leader>e', ':NvimTreeToggle<CR>')

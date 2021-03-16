@@ -28,7 +28,7 @@ return require('packer').startup({
 
     --  Status Line and Bufferline
     use { 'glepnir/galaxyline.nvim', branch = 'main', config = 'require("plugins.galaxyline")', requires = {'kyazdani42/nvim-web-devicons', opt = true} }
-    use { 'romgrk/barbar.nvim' }
+    use { 'akinsho/nvim-bufferline.lua', config = 'require("plugins.nvim-bufferline")' }
 
     --  Explorer
     use { 'kyazdani42/nvim-tree.lua', config = 'require("plugins.nvim-tree")' }
