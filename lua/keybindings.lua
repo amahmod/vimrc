@@ -78,5 +78,37 @@ map('n','<leader>gb',':Telescope git_branches<CR>')
 map('n','<leader>gs',':Telescope git_status<CR>')
 map('n','<leader>fo',':Telescope treesitter<CR>')
 
+--  Gitgutter
+map('n', ']g', ':GitGutterNextHunk<CR>')
+map('n', '[g', ':GitGutterPrevHunk<CR>')
+map('n', 'hf', ':GitGutterFold<CR>')
 
+-- Accelerated_jk
+vim.api.nvim_set_keymap("n", "j", '<Plug>(accelerated_jk_gj)', {})
+vim.api.nvim_set_keymap("n", "k", '<Plug>(accelerated_jk_gk)', {})
 
+-- Plugin fugitive
+map("n", "<leader>ga",':Git add %:p<CR>')
+map("n","<leader>gg",':Git<CR>')
+map("n","<leader>gd",':Gdiffsplit<CR>')
+map("n","<leader>ge",':Gedit<CR>')
+map("n","<leader>gr",':Gread<CR>')
+map("n","<leader>gw",':Gwrite<CR>')
+map("n","<leader>gB",':Git blame<Cr>')
+-- ["n|<leader>gb"]        = map_cr('Git branch'):with_silent(),
+map("n","<leader>gf",':Gfetch<CR>')
+map("n","<leader>gl",':Git log<CR>')
+
+-- Vista
+map('n', '<leader>to', ':Vista!!<CR>')
+
+-- Prettier
+map('n', '<leader>f', ':Prettier<CR>')
+
+-- EasiAlign
+map('n', 'ga', ':EasyAlign<CR>')
+map('v', 'ga', ':EasyAlign<CR>')
+map('x', 'ga', ':EasyAlign<CR>')
+
+-- JsDoc
+vim.api.nvim_set_keymap("n", "<leader>d", '<Plug>(jsdoc)', {})

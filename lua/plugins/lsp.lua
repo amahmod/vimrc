@@ -37,24 +37,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "<space>=", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
 
-  -- LSP SAGA
-  buf_set_keymap("n", 'gh', ':Lspsaga lsp_finder<CR>', opts)
-  buf_set_keymap("n", '<leader>ca', ':Lspsaga code_action<CR>', opts)
-  buf_set_keymap("v", '<leader>ca', ':<C-U>Lspsaga range_code_action<CR>', opts)
-  buf_set_keymap("n", 'K', ':Lspsaga hover_doc<CR>', opts)
-  buf_set_keymap("n", '<C-f>', ':lua require"lspsaga.action".smart_scroll_with_saga(1)<CR>', opts)
-  buf_set_keymap("n", '<C-b>', ':lua require"lspsaga.action".smart_scroll_with_saga(-1)<CR>', opts)
-  buf_set_keymap("n", 'gs', ':Lspsaga signature_help<CR>', opts)
-  buf_set_keymap("n", 'gr', ':Lspsaga rename<CR>', opts)
-  buf_set_keymap("n", 'gd', ':Lspsaga preview_definition<CR>', opts)
-  buf_set_keymap("n", 'cd', ':Lspsaga show_line_diagnostics<CR>', opts)
-  buf_set_keymap("n", ']d', ':Lspsaga diagnostic_jump_next<CR>', opts)
-  buf_set_keymap("n", '[d', ':Lspsaga diagnostic_jump_prev<CR>', opts)
-  vim.cmd [[ nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR> ]]
-  vim.cmd [[ tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR> ]]
-
-
-
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
@@ -177,5 +159,3 @@ require('lspkind').init({
       Struct = '  '
     },
 })
-
-require('lspsaga').init_lsp_saga()
