@@ -2,6 +2,10 @@ local global = require("globals")
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 
+vim.cmd('set iskeyword+=-')                  --treat dash separated words as a word text object"
+vim.cmd('set shortmess+=c')                 --Don't pass messages to |ins-completion-menu|.
+vim.cmd('set whichwrap+=<,>,[,],h,l')
+
 local global_local = {
   termguicolors    = true;
   mouse            = "nv";
@@ -29,7 +33,8 @@ local global_local = {
   completeopt      = "menuone,noselect";
   scrolloff        = 2;
   updatetime       = 300;
-  timeoutlen       = 500
+  timeoutlen       = 500;
+  pumheight        = 10;
 }
 
 local bw_local     = {
@@ -45,7 +50,7 @@ local bw_local     = {
   colorcolumn      = "80";
   foldenable       = true;
   signcolumn       = "yes:1";
-  conceallevel     = 2;
+  conceallevel     = 0;
   concealcursor    = "niv";
 }
 

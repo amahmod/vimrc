@@ -46,7 +46,7 @@ return require('packer').startup({
     use { 'hrsh7th/vim-vsnip', requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'}, config = function() vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets" end }
 
     --  Syntax highlighting
-    use { 'nvim-treesitter/nvim-treesitter', requires = { {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}, }, config = 'require("plugins.treesitter")'}
+    use { 'nvim-treesitter/nvim-treesitter', requires = { {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}, { 'nvim-treesitter/nvim-treesitter-refactor', after ="nvim-treesitter" }, { 'romgrk/nvim-treesitter-context', after = 'nvim-treesitter'} }, config = 'require("plugins.treesitter")'}
 
     --  Telescope
     use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-media-files.nvim'}, config = 'require("plugins.telescope")' }
@@ -69,7 +69,7 @@ return require('packer').startup({
     use 'vimwiki/vimwiki'
     use { 'liuchengxu/vista.vim',     config =  'require("plugins.vista")'  }
     use { 'windwp/nvim-autopairs',    config = 'require("plugins.nvim-autopairs")' }
-    use { 'b3nj5m1n/kommentary',      config = 'require("plugins.kommentary")' }
+    use 'tomtom/tcomment_vim'
     use { 'alvan/vim-closetag',       config = 'require("plugins.closeatag")' }
     use { 'phaazon/hop.nvim',         config = 'require("plugins.hop")' }
     use { 'AndrewRadev/tagalong.vim', config = 'require("plugins.tagalong")'}
@@ -79,6 +79,8 @@ return require('packer').startup({
     use 'tpope/vim-surround'
     use 'junegunn/vim-easy-align'
     use { 'christoomey/vim-tmux-navigator'}
+    use 'moll/vim-bbye'
+
   end,
   config = {
       display = {

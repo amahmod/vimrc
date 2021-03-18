@@ -5,6 +5,10 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
       enable = true,
     },
+   refactor = {
+      highlight_definitions = { enable = true },
+      highlight_current_scope = { enable = true },
+    },
     textobjects = {
       select = {
         enable = true,

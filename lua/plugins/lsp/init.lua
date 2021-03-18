@@ -30,6 +30,8 @@ vim.cmd('vnoremap <silent> ca :Lspsaga range_code_action<CR>')
 vim.cmd('nnoremap <silent> K :Lspsaga hover_doc<CR>')
 vim.cmd('nnoremap <silent> [d :Lspsaga diagnostic_jump_prev<CR>')
 vim.cmd('nnoremap <silent> ]d :Lspsaga diagnostic_jump_next<CR>')
+-- Lspsaga finder
+vim.cmd('nnoremap <silent> gh :Lspsaga lsp_finder<CR>')
 -- scroll down hover doc or scroll in definition preview
 vim.cmd('nnoremap <silent> <C-f> <cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(1)<CR>')
 -- scroll up hover doc
@@ -59,3 +61,4 @@ require('plugins.lsp.docker-ls')
 require('plugins.lsp.lua-ls')
 require('plugins.lsp.vim-ls')
 require('plugins.lsp.yaml-ls')
+require('plugins.lsp.vue-ls')
