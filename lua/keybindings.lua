@@ -24,13 +24,9 @@ map("n", "<leader>wR",'<C-w>R')
 
 map("n","]b",':bp<CR>')
 map("n", "[b",':bn<CR>')
-map("n", "]w", 'WhitespaceNext')
-map("n", "[w",'WhitespacePrev')
-map("n", "<C-w>[",'vertical resize -5')
-map("n", "<C-w>]", 'vertical resize +5')
-map("n", "<Leader>S",'SessionSave')
-map("n", "<Leader>Sl",'SessionLoad')
-map("n", "<CR>",'nohlsearch')
+map("n", "<C-w>[",':vertical resize -5')
+map("n", "<C-w>]", ':vertical resize +5')
+map("n", "<CR>",':nohlsearch<CR>')
 
 
 
