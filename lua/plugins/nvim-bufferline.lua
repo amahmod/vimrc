@@ -10,5 +10,3 @@ require'bufferline'.setup{
     end
   }
 }
-
-print('bufferlien')

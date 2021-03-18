@@ -53,7 +53,7 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently both setup defined servers 
+-- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
 local servers = { "tsserver", "vimls", "vuels", "html", "jsonls", "cssls", "intelephense" }
 for _, lsp in ipairs(servers) do

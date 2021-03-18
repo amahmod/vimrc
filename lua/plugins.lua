@@ -79,7 +79,7 @@ return require('packer').startup({
     use 'rhysd/accelerated-jk'
     use 'tpope/vim-surround'
     use 'junegunn/vim-easy-align'
-
+    use { 'christoomey/vim-tmux-navigator'}
   end,
   config = {
       display = {
