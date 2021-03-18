@@ -15,6 +15,12 @@ function lsp_config.common_on_attach(client, bufnr)
       augroup END
     ]], false)
     end
+    if client.resolved_capabilities.document_formatting then
+      vim.api.nvim_buf_set_keymap(0,"n", "<space>=", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap =  true, silent = true})
+    elseif client.resolved_capabilities.document_range_formatting then
+      vim.api.nvim_buf_set_keymap(0, "n", "<space>=", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", { noremap = true, silent = true})
+    end
+
 end
 
 return lsp_config
