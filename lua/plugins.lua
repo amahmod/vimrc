@@ -52,8 +52,7 @@ return require('packer').startup({
     use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-media-files.nvim'}, config = 'require("plugins.telescope")' }
 
     --  LSP
-    use { 'neovim/nvim-lspconfig', requires = { 'onsails/lspkind-nvim',  'kosayoda/nvim-lightbulb' }, config = 'require("plugins.lsp")'  }
-    use { 'glepnir/lspsaga.nvim', config = 'require("plugins.lspsaga")' }
+    use { 'neovim/nvim-lspconfig', requires = { 'onsails/lspkind-nvim',  'kosayoda/nvim-lightbulb',  'glepnir/lspsaga.nvim' }, config = 'require("plugins.lsp")'  }
 
     --  Javascript
     use { 'metakirby5/codi.vim' }

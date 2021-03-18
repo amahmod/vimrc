@@ -29,7 +29,6 @@ map("n", "<C-w>]", ':vertical resize +5')
 map("n", "<CR>",':nohlsearch<CR>')
 
 
-
 ------------------------------------
 --  PLUGIN SPECIFIC KEYBINDINGS
 ------------------------------------
@@ -71,9 +70,14 @@ map('n','<leader>gs',':Telescope git_status<CR>')
 map('n','<leader>fo',':Telescope treesitter<CR>')
 
 --  Gitgutter
-map('n', ']g', ':GitGutterNextHunk<CR>')
-map('n', '[g', ':GitGutterPrevHunk<CR>')
-map('n', 'hf', ':GitGutterFold<CR>')
+map('n', ']h', ':GitGutterNextHunk<CR>')
+map('n', '[h', ':GitGutterPrevHunk<CR>')
+map('n', '<leader>hf', ':GitGutterFold<CR>')
+map('n', '<leader>th', ':GitGutterLineHighlightsToggle<CR>')
+map('n', '<leader>hs', ':GitGutterStageHunk<CR>')
+map('n', '<leader>hu', ':GitGutterUndoHunk<CR>')
+map('n', '<leader>hp', ':GitGutterPreviewHunk<CR>')
+
 
 -- Accelerated_jk
 vim.api.nvim_set_keymap("n", "j", '<Plug>(accelerated_jk_gj)', {})
@@ -95,7 +99,7 @@ map("n","<leader>gl",':Git log<CR>')
 map('n', '<leader>to', ':Vista!!<CR>')
 
 -- Prettier
-map('n', '<leader>f', ':Prettier<CR>')
+map('n', '<leader>F', ':Prettier<CR>')
 
 -- EasiAlign
 map('n', 'ga', ':EasyAlign<CR>')
