@@ -32,7 +32,7 @@ $ sudo pacman -S nodejs npm yarn tree-sitter ripgrep fzf
 | Lua                                    | See [lua language server setup guide](https://github.com/sumneko/lua-language-server) |
 | EFM ( General purpose language server) | See [efm server setup guide](https://github.com/mattn/efm-langserver)                 |
 
-**Install language server ( availed as npm packages ) in a single command**
+**Install language server ( available as npm packages ) in a single command**
 
 ```shell
 $ sudo pacman -S vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server vls vscode-json-languageserver bash-language-server dockerfile-language-server-nodejs yaml-language-server
