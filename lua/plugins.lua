@@ -46,7 +46,7 @@ return require('packer').startup({
     use { 'hrsh7th/vim-vsnip', requires = { 'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'}, config = function() vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets" end }
 
     --  Syntax highlighting
-    use { 'nvim-treesitter/nvim-treesitter', requires = { {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}, { 'nvim-treesitter/nvim-treesitter-refactor', after ="nvim-treesitter" }, { 'romgrk/nvim-treesitter-context', after = 'nvim-treesitter'} }, config = 'require("plugins.treesitter")'}
+    use { 'nvim-treesitter/nvim-treesitter', requires = { {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}, { 'nvim-treesitter/nvim-treesitter-refactor', after ="nvim-treesitter" } }, config = 'require("plugins.treesitter")'}
 
     --  Telescope
     use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-media-files.nvim'}, config = 'require("plugins.telescope")' }
