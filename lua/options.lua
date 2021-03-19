@@ -1,4 +1,5 @@
-local global = require("globals")
+local cache_dir = require('modules.util').cache_dir
+
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 
@@ -18,11 +19,11 @@ local global_local = {
   writebackup      = false;
   undofile         = true;
   swapfile         = false;
-  directory        = global.cache_dir .. "swag/";
-  undodir          = global.cache_dir .. "undo/";
-  backupdir        = global.cache_dir .. "backup/";
-  viewdir          = global.cache_dir .. "view/";
-  spellfile        = global.cache_dir .. "spell/en.uft-8.add";
+  directory        = cache_dir .. "swag/";
+  undodir          = cache_dir .. "undo/";
+  backupdir        = cache_dir .. "backup/";
+  viewdir          = cache_dir .. "view/";
+  spellfile        = cache_dir .. "spell/en.uft-8.add";
   backupskip       = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim";
   history          = 2000;
   ignorecase       = true;
@@ -48,7 +49,7 @@ local bw_local     = {
   number           = true;
   relativenumber   = true;
   colorcolumn      = "80";
-  foldenable       = true;
+  foldenable       = false;
   signcolumn       = "yes:1";
   conceallevel     = 0;
   concealcursor    = "niv";

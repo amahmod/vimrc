@@ -1,2 +1,4 @@
-vim.api.nvim_set_keymap('n', 's', ":HopChar2<cr>", {})
-vim.api.nvim_set_keymap('n', 'S', ":HopWord<cr>", {})
+local map = require("modules.util").set_keymap
+
+map('n', 's', ":HopChar2<cr>")
+map('n', 'S', ":HopWord<cr>")

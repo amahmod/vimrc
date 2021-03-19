@@ -1,4 +1,3 @@
 -- npm install -g yaml-language-server
-require'lspconfig'.yamlls.setup{
-    on_attach = require'plugins.lsp.functions'.common_on_attach,
-}
+local events = require('plugins.lsp.events')
+require'lspconfig'.yamlls.setup {on_attach = events.custom_on_attach, on_init = events.custom_on_init}
