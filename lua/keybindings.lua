@@ -21,8 +21,10 @@ map("n", "<leader>wR", '<C-w>R')
 
 map("n", "]b", ':bp<CR>')
 map("n", "[b", ':bn<CR>')
-map("n", "<C-w>[", ':vertical resize -5')
-map("n", "<C-w>]", ':vertical resize +5')
+map("n", "<C-Right>", ':vertical resize -2<CR>')
+map("n", "<C-Left>", ':vertical resize +2<CR>')
+map("n", "<C-Up>", ':resize -2<CR>')
+map("n", "<C-Down>", ':resize +2<CR>')
 map("n", "<CR>", ':nohlsearch<CR>')
 
 ------------------------------------
@@ -117,3 +119,6 @@ vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+-- Markdown Preview
+map('n', '<leader>tm', ':MarkdownPreviewToggle<CR>')

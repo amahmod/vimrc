@@ -102,7 +102,7 @@ return require('packer').startup({
     }
 
     -- General Plugins
-    use 'vimwiki/vimwiki'
+    use {'vimwiki/vimwiki', branch = 'dev', config = 'require("plugins.vimwiki")'}
     use {'liuchengxu/vista.vim', config = 'require("plugins.vista")'}
     use {'windwp/nvim-autopairs', config = 'require("plugins.nvim-autopairs")'}
     use 'tomtom/tcomment_vim'
