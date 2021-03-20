@@ -111,3 +111,9 @@ map('n', '<leader>x', ':Bdelete<CR>')
 -- Open/Close floating terminal
 vim.cmd [[ nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR> ]]
 vim.cmd [[ tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR> ]]
+
+-- Compe
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
