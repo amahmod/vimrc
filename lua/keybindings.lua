@@ -27,6 +27,12 @@ map("n", "<C-Up>", ':resize -2<CR>')
 map("n", "<C-Down>", ':resize +2<CR>')
 map("n", "<CR>", ':nohlsearch<CR>')
 
+
+
+map("i", "jj", '<esc>')
+map("i", "jk", '<esc>')
+map("i", "kj", '<esc>')
+
 ------------------------------------
 --  PLUGIN SPECIFIC KEYBINDINGS
 ------------------------------------
