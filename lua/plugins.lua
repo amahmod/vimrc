@@ -56,6 +56,7 @@ return require('packer').startup({
     use 'xabikos/vscode-javascript'
     use 'ChristianChiarulli/html-snippets'
     use 'sdras/vue-vscode-snippets'
+    use { 'mattn/emmet-vim', config = 'require("plugins.emmet")' }
 
     --  Syntax highlighting
     use {

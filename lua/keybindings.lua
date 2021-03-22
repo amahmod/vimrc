@@ -128,3 +128,6 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 -- Markdown Preview
 map('n', '<leader>tm', ':MarkdownPreviewToggle<CR>')
+
+-- Emmet
+vim.cmd [[ imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>") ]]
