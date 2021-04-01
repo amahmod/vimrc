@@ -1,4 +1,4 @@
-local map = require('modules.util').set_keymap
+local map = require('utils').set_keymap
 
 -- General Keybindings
 map('n', '<leader>s', ':w<CR>')

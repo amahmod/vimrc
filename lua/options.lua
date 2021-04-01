@@ -1,4 +1,4 @@
-local cache_dir = require('modules.util').cache_dir
+local cache_dir = require('utils').cache_dir
 
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")

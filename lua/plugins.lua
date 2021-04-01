@@ -29,24 +29,24 @@ return require('packer').startup({
     use {
       'glepnir/galaxyline.nvim',
       branch = 'main',
-      config = 'require("plugins.galaxyline")',
+      config = 'require("modules.galaxyline")',
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
-    use {'akinsho/nvim-bufferline.lua', config = 'require("plugins.nvim-bufferline")'}
+    use {'akinsho/nvim-bufferline.lua', config = 'require("modules.nvim-bufferline")'}
 
     --  Explorer
-    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins.nvim-tree")'}
+    use {'kyazdani42/nvim-tree.lua', config = 'require("modules.nvim-tree")'}
 
     --  Color highlight
-    use {'norcalli/nvim-colorizer.lua', config = 'require("plugins.nvim-colorizer")'}
+    use {'norcalli/nvim-colorizer.lua', config = 'require("modules.nvim-colorizer")'}
 
     --  Git
-    use {'airblade/vim-gitgutter', config = 'require("plugins.gitgutter")'}
+    use {'airblade/vim-gitgutter', config = 'require("modules.gitgutter")'}
     use 'tpope/vim-fugitive'
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
     --  Completion
-    use {'hrsh7th/nvim-compe', config = 'require("plugins.compe")'}
+    use {'hrsh7th/nvim-compe', config = 'require("modules.compe")'}
     use {
       'hrsh7th/vim-vsnip',
       requires = {'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'},
@@ -57,7 +57,7 @@ return require('packer').startup({
     use 'xabikos/vscode-javascript'
     use 'ChristianChiarulli/html-snippets'
     use 'sdras/vue-vscode-snippets'
-    use {'mattn/emmet-vim', config = 'require("plugins.emmet")'}
+    use {'mattn/emmet-vim', config = 'require("modules.emmet")'}
 
     --  Syntax highlighting
     use {
@@ -66,14 +66,14 @@ return require('packer').startup({
         {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'},
         {'nvim-treesitter/nvim-treesitter-refactor', after = "nvim-treesitter"}
       },
-      config = 'require("plugins.treesitter")'
+      config = 'require("modules.treesitter")'
     }
 
     --  Telescope
     use {
       'nvim-telescope/telescope.nvim',
       requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-media-files.nvim'},
-      config = 'require("plugins.telescope")'
+      config = 'require("modules.telescope")'
     }
 
     --  LSP
@@ -104,13 +104,13 @@ return require('packer').startup({
     }
 
     -- General Plugins
-    use {'vimwiki/vimwiki', branch = 'dev', config = 'require("plugins.vimwiki")'}
-    use {'liuchengxu/vista.vim', config = 'require("plugins.vista")'}
-    use {'windwp/nvim-autopairs', config = 'require("plugins.nvim-autopairs")'}
+    use {'vimwiki/vimwiki', branch = 'dev', config = 'require("modules.vimwiki")'}
+    use {'liuchengxu/vista.vim', config = 'require("modules.vista")'}
+    use {'windwp/nvim-autopairs', config = 'require("modules.nvim-autopairs")'}
     use 'tomtom/tcomment_vim'
-    use {'alvan/vim-closetag', config = 'require("plugins.closeatag")'}
-    use {'phaazon/hop.nvim', config = 'require("plugins.hop")'}
-    use {'AndrewRadev/tagalong.vim', config = 'require("plugins.tagalong")'}
+    use {'alvan/vim-closetag', config = 'require("modules.closeatag")'}
+    use {'phaazon/hop.nvim', config = 'require("modules.hop")'}
+    use {'AndrewRadev/tagalong.vim', config = 'require("modules.tagalong")'}
     use {
       'glacambre/firenvim',
       run = function()
