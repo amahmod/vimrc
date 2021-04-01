@@ -109,8 +109,8 @@ return require('packer').startup({
     use {'liuchengxu/vista.vim', config = 'require("modules.vista")'}
     use {'terrortylor/nvim-comment', config = 'require("modules.nvim-comment")'}
     use 'moll/vim-bbye'
-    use { 'MattesGroeger/vim-bookmarks', config = 'require("modules.vim-bookmarks")' }
-
+    use {'MattesGroeger/vim-bookmarks', config = 'require("modules.vim-bookmarks")'}
+    use {'liuchengxu/vim-which-key', config = 'vim.cmd [[ source ~/.config/nvim/lua/modules/whichkey.vim ]]'}
   end,
   config = {display = {open_fn = require"packer.util".float}}
 })
