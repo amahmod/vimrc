@@ -53,6 +53,11 @@ map('n', '<leader>tn', ':set nonumber!<CR>')
 -- Toggle relative line numbers
 map('n', '<leader>tr', ':set norelativenumber!<CR>')
 
+-- Quickfix
+map('n', '<leader>ax', ':cclose<CR>')
+map('n', '<leader>aj', ':cnext<CR>')
+map('n', '<leader>ak', ':cprevious<CR>')
+
 -- Better nav for omnicomplete
 -- vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 -- vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
@@ -203,6 +208,7 @@ map('n', '<C-p>', ':Telescope find_files<CR>')
 map('n', '<leader>.', ':Telescope filetypes<CR>')
 map('n', '<leader>fa', ':Telescope lsp_code_actions<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
+map('n', '<leader>b?', ':Telescope buffers<CR>')
 map('n', '<leader>fB', ':Telescope git_branches<CR>')
 map('n', '<leader>fc', ':Telescope commands<CR>')
 map('n', '<leader>fC', ':Telescope git_commits<CR>')
