@@ -1,8 +1,9 @@
 -- Formatting via efm
-local events = require('plugins.lsp.events')
-local prettier = require "plugins.efm.prettier"
-local eslint = require "plugins.efm.eslint"
-local luafmt = require "plugins.efm.luafmt"
+local utils = require('lsp.utils')
+
+local prettier = require "efm.prettier"
+local eslint = require "efm.eslint"
+local luafmt = require "efm.luafmt"
 
 local languages = {
   lua = {luafmt},
@@ -21,8 +22,8 @@ local languages = {
 
 require'lspconfig'.efm.setup {
   init_options = {documentFormatting = true, codeAction = false},
-  on_attach = events.custom_on_attach,
-  on_init = events.custom_on_init,
+  on_attach = utils.custom_on_attach,
+  on_init = utils.custom_on_init,
   cmd = {"efm-langserver", '-logfile', '/tmp/efm.log', '-loglevel', '5'},
   root_dir = require("lspconfig").util.root_pattern(unpack({".git/", "package.json"})),
   settings = {rootMarkers = {".git/"}, languages = languages},

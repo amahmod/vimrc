@@ -1,12 +1,12 @@
-local events = require('plugins.lsp.events')
+local Utils = require('lsp.utils')
 
 local USER = vim.fn.expand('$USER')
 local sumneko_root_path = '/home/' .. USER .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup {
-  on_attach = events.custom_on_attach,
-  on_init = events.custom_on_init,
+  on_attach = Utils.custom_on_attach,
+  on_init = Utils.custom_on_init,
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
   settings = {
     Lua = {

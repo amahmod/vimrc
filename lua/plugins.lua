@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -56,7 +57,7 @@ return require('packer').startup({
     use 'xabikos/vscode-javascript'
     use 'ChristianChiarulli/html-snippets'
     use 'sdras/vue-vscode-snippets'
-    use { 'mattn/emmet-vim', config = 'require("plugins.emmet")' }
+    use {'mattn/emmet-vim', config = 'require("plugins.emmet")'}
 
     --  Syntax highlighting
     use {
@@ -79,7 +80,7 @@ return require('packer').startup({
     use {
       'neovim/nvim-lspconfig',
       requires = {'onsails/lspkind-nvim', 'kosayoda/nvim-lightbulb', 'glepnir/lspsaga.nvim'},
-      config = 'require("plugins.lsp")'
+      config = 'require("lsp")'
     }
 
     --  Javascript
