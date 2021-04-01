@@ -72,7 +72,3 @@ for name, value in pairs(global_local) do
   vim.o[name] = value
 end
 bind_option(bw_local)
-
-
--- Map <leader> to space
-vim.g.mapleader = " "

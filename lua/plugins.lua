@@ -20,33 +20,30 @@ return require('packer').startup({
     --  " Themes
     use 'gruvbox-community/gruvbox'
     use 'glepnir/zephyr-nvim'
+    use {'norcalli/nvim-colorizer.lua', config = 'require("modules.nvim-colorizer")'} -- highlight color
 
     --  Icons
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
     --  Status Line and Bufferline
-    use {
-      'glepnir/galaxyline.nvim',
-      branch = 'main',
-      config = 'require("modules.galaxyline")',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
+    use {'glepnir/galaxyline.nvim', branch = 'main', config = 'require("modules.galaxyline")'}
     use {'akinsho/nvim-bufferline.lua', config = 'require("modules.nvim-bufferline")'}
 
     --  Explorer
     use {'kyazdani42/nvim-tree.lua', config = 'require("modules.nvim-tree")'}
 
-    --  Color highlight
-    use {'norcalli/nvim-colorizer.lua', config = 'require("modules.nvim-colorizer")'}
-
     --  Git
     use {'airblade/vim-gitgutter', config = 'require("modules.gitgutter")'}
+    use {'f-person/git-blame.nvim', config = 'require("modules.git-blame")'}
     use 'tpope/vim-fugitive'
+
+    -- Easily create gists
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
     --  Completion
     use {'hrsh7th/nvim-compe', config = 'require("modules.compe")'}
+    use {'windwp/nvim-autopairs', config = 'require("modules.nvim-autopairs")'}
     use {
       'hrsh7th/vim-vsnip',
       requires = {'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip'},
@@ -59,15 +56,18 @@ return require('packer').startup({
     use 'sdras/vue-vscode-snippets'
     use {'mattn/emmet-vim', config = 'require("modules.emmet")'}
 
-    --  Syntax highlighting
+    --  Treesitter
     use {
       'nvim-treesitter/nvim-treesitter',
       requires = {
+        'JoosepAlviste/nvim-ts-context-commentstring', 'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow',
         {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'},
         {'nvim-treesitter/nvim-treesitter-refactor', after = "nvim-treesitter"}
       },
-      config = 'require("modules.treesitter")'
+      config = 'require("modules.treesitter")',
+      run = ':TSUpdate'
     }
+    use {'lukas-reineke/indent-blankline.nvim', config = 'require("modules.indent-blankline")', branch = 'lua'}
 
     --  Telescope
     use {
@@ -96,33 +96,20 @@ return require('packer').startup({
       end
     }
 
-    --  Code formatting
-    use {
-      'prettier/vim-prettier',
-      ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'},
-      run = 'yarn install'
-    }
+    -- Quick navigation
+    use {'phaazon/hop.nvim'}
+    use {'unblevable/quick-scope', config = 'require("modules.quick-scope")'} -- hop may replace you
+    use {'christoomey/vim-tmux-navigator'}
 
     -- General Plugins
+    use 'rhysd/accelerated-jk'
+    use 'junegunn/vim-easy-align'
+    use 'tpope/vim-surround'
     use {'vimwiki/vimwiki', branch = 'dev', config = 'require("modules.vimwiki")'}
     use {'liuchengxu/vista.vim', config = 'require("modules.vista")'}
-    use {'windwp/nvim-autopairs', config = 'require("modules.nvim-autopairs")'}
-    use 'tomtom/tcomment_vim'
-    use {'alvan/vim-closetag', config = 'require("modules.closeatag")'}
-    use {'phaazon/hop.nvim', config = 'require("modules.hop")'}
-    use {'AndrewRadev/tagalong.vim', config = 'require("modules.tagalong")'}
-    use {
-      'glacambre/firenvim',
-      run = function()
-        vim.fn['firenvim#install'](1)
-      end
-    }
-    use 'glepnir/indent-guides.nvim'
-    use 'rhysd/accelerated-jk'
-    use 'tpope/vim-surround'
-    use 'junegunn/vim-easy-align'
-    use {'christoomey/vim-tmux-navigator'}
+    use {'terrortylor/nvim-comment', config = 'require("modules.nvim-comment")'}
     use 'moll/vim-bbye'
+    use { 'MattesGroeger/vim-bookmarks', config = 'require("modules.vim-bookmarks")' }
 
   end,
   config = {display = {open_fn = require"packer.util".float}}
