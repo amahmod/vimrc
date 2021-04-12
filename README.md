@@ -35,5 +35,5 @@ $ sudo pacman -S nodejs npm yarn tree-sitter ripgrep fzf
 **Install language server ( available as npm packages ) in a single command**
 
 ```shell
-$ sudo pacman -S vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server vls vscode-json-languageserver bash-language-server dockerfile-language-server-nodejs yaml-language-server
+$ npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server vls vscode-json-languageserver bash-language-server dockerfile-language-server-nodejs yaml-language-server
 ```
