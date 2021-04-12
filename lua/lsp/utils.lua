@@ -23,7 +23,6 @@ M.custom_on_attach = function(client, bufnr)
 end
 
 M.custom_on_init = function(client)
-  print("Language Server Protocol started!")
   if client.config.flags then client.config.flags.allow_incremental_sync = true end
 end
 
