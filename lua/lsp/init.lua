@@ -18,6 +18,7 @@ require('lsp.bash-ls')
 require('lsp.vim-ls')
 require('lsp.docker-ls')
 require('lsp.lua-ls')
+require('lsp.php-ls')
 require('lsp.efm-general-ls')
 
 require('lspkind').init({

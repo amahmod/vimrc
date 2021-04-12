@@ -37,3 +37,8 @@ $ sudo pacman -S nodejs npm yarn tree-sitter ripgrep fzf
 ```shell
 $ npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server vls vscode-json-languageserver bash-language-server dockerfile-language-server-nodejs yaml-language-server
 ```
+
+
+### TODO
+  - use `yay` to install `efm-langserver`
+  - use `yay` to install `lua-format`
