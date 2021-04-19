@@ -52,6 +52,13 @@ function autocmd.load_autocmds()
       {"BufWritePost","plugins.lua","PackerCompile"},
       {"FileType", "gitcommit", "set spell"}
     };
+    format = {
+      { "BufWritePre", "*.js", "lua vim.lsp.buf.formatting_sync(nil,1000)"},
+      { "BufWritePre", "*.vue", "lua vim.lsp.buf.formatting_sync(nil,1000)"},
+      { "BufWritePre", "*.html", "lua vim.lsp.buf.formatting_sync(nil,1000)"},
+      { "BufWritePre", "*.json", "lua vim.lsp.buf.formatting_sync(nil,1000)"},
+      { "BufWritePre", "*.lua", "lua vim.lsp.buf.formatting_sync(nil,1000)"},
+    };
 
     yank = {
       {"TextYankPost", [[* silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=400})]]};
