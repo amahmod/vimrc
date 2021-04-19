@@ -155,7 +155,7 @@ map('n', '<leader>aC', ':Codi!<CR>')
 
 -- Vim bookmarks
 map('n', '<leader>mm', ':BookmarkToggle<CR>')
-map('n', '<leader>mi', ':BookmarkAnnotate')
+map('n', '<leader>mi', ':BookmarkAnnotate<CR>')
 map('n', '<leader>mn', ':BookmarkNext<CR>')
 map('n', '<leader>mp', ':BookmarkPrev<CR>')
 map('n', '<leader>ma', ':BookmarkShowAll<CR>')
