@@ -32,13 +32,14 @@ $ sudo pacman -S nodejs npm yarn tree-sitter ripgrep fzf
 | Lua                                    | See [lua language server setup guide](https://github.com/sumneko/lua-language-server) |
 | EFM ( General purpose language server) | See [efm server setup guide](https://github.com/mattn/efm-langserver)                 |
 
-**Install language server ( available as npm packages ) in a single command**
+**_Install language server ( available as npm packages ) in a single command_**
 
 ```shell
 $ npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server vls vscode-json-languageserver bash-language-server dockerfile-language-server-nodejs yaml-language-server
 ```
 
-
-### TODO
-  - use `yay` to install `efm-langserver`
-  - use `yay` to install `lua-format`
+If you are a `arch linux` user you can use `yay` to install `efm-langserver` and
+`lua-format`
+```shell
+$ yay -S efm-langserver lua-format
+```
