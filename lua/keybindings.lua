@@ -53,6 +53,8 @@ map('n', '<leader>tn', ':set nonumber!<CR>')
 -- Toggle relative line numbers
 map('n', '<leader>tr', ':set norelativenumber!<CR>')
 
+map('n', '<leader>tc', ':set conceallevel=0<CR>')
+
 -- Quickfix
 map('n', '<leader>ax', ':cclose<CR>')
 map('n', '<leader>aj', ':cnext<CR>')
@@ -144,7 +146,7 @@ vim.cmd [[ tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR> ]]
 map('n', '<leader>tm', ':MarkdownPreviewToggle<CR>')
 
 -- Nvim colorizer
-map('n', '<leader>tc', ':ColorizerToggle<CR>')
+map('n', '<leader>tC', ':ColorizerToggle<CR>')
 
 -- Indent blankline
 map('n', '<leader>ti', ':IndentBlanklineToggle<CR>')
