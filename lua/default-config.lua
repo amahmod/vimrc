@@ -10,6 +10,7 @@ O = {
 	  transparent_window = false,
 	  number = true,
 	  relative_number = true,
-          clipboard = "unnamedplus",
+    clipboard = "unnamedplus",
 	  colorscheme = "zephyr",
+	  leader_key = "space",
 }
