@@ -65,3 +65,12 @@ map('n', '<leader>tc', ':set conceallevel=0<CR>')
 map('n', '<leader>ax', ':cclose<CR>')
 map('n', '<leader>aj', ':cnext<CR>')
 map('n', '<leader>ak', ':cprevious<CR>')
+
+
+------------------------------------
+--  PLUGIN SPECIFIC KEYBINDINGS
+-----------------------------------
+
+-- Nvim-tree
+map('n', '<leader>e', ':NvimTreeToggle<CR>')
+map('n', '<leader>?', ':NvimTreeFindFile<CR>')

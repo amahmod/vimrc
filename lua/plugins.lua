@@ -25,7 +25,10 @@ return require('packer').startup({
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
-    -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
+    -- 
+    use {'kyazdani42/nvim-tree.lua', config = 'require("plugins.nvim-tree").config()'}
+
+    -- LSP
     use {"neovim/nvim-lspconfig"}
     use {
       "kabouzeid/nvim-lspinstall",
