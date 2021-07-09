@@ -25,8 +25,42 @@ return require('packer').startup({
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
-    --
+    -- Nvim-tree
     use {'kyazdani42/nvim-tree.lua', config = 'require("plugins.nvim-tree").config()'}
+
+    -- Telescope
+    use {"nvim-lua/popup.nvim"}
+    use {"nvim-lua/plenary.nvim"}
+    use {
+      "nvim-telescope/telescope.nvim",
+      config = [[require('plugins.telescope')]]
+      -- event = "BufEnter",
+    }
+
+    -- Autopairs
+    use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      after = {"telescope.nvim"},
+      config = [[require('plugins.autopairs')]]
+    }
+
+    -- Use fzy for telescope
+    use {"nvim-telescope/telescope-fzy-native.nvim", event = "BufRead", disable = not O.plugin.telescope_fzy.active}
+
+    -- Use project for telescope
+    use {
+      "nvim-telescope/telescope-project.nvim",
+      event = "BufRead",
+      setup = function()
+        vim.cmd [[packadd telescope.nvim]]
+      end,
+      disable = not O.plugin.telescope_project.active
+    }
+    use {
+      "nvim-telescope/telescope-media-files.nvim",
+      disable = not O.plugin.telescope_media.active
+    }
 
     -- Treesitter   use {
     use {'nvim-treesitter/nvim-treesitter', config = 'require("plugins.treesitter")', run = ':TSUpdate'}

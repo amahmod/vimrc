@@ -1,4 +1,4 @@
-CONFIG_PATH = vim.fn.stdpath "config"
+ONFIG_PATH = vim.fn.stdpath "config"
 DATA_PATH = vim.fn.stdpath "data"
 CACHE_PATH = vim.fn.stdpath "cache"
 TERMINAL = vim.fn.expand "$TERMINAL"
@@ -32,7 +32,10 @@ O = {
     ts_autotag = {active = true},
     ts_rainbow = {active = false},
     ts_textobjects = {active = true},
-    ts_textsubjects = {active = false}
+    ts_textsubjects = {active = false},
+    telescope_media = {active = true},
+    telescope_fzy = {active = false},
+    telescope_project = {active = false},
   },
   lang = {
     lua = {
