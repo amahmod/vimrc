@@ -2,13 +2,12 @@ local map = require('utils').set_keymap
 
 -- Set leader
 if O.leader_key == " " or O.leader_key == "space" then
-  vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", {noremap = true, silent = true})
   vim.g.mapleader = " "
 else
-  vim.api.nvim_set_keymap("n", O.leader_key, "<NOP>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", O.leader_key, "<NOP>", {noremap = true, silent = true})
   vim.g.mapleader = O.leader_key
 end
-
 
 -- General Keybindings
 map('n', '<leader>s', ':w<CR>') -- save file
@@ -21,7 +20,7 @@ map('n', '<leader>ba', ':bufdo bd<CR>') -- close all buffer
 
 -- split window
 map('n', '<leader>ws', ':sp<CR>') -- split horizontally
-map('n', '<leader>wv', ':vs<CR>') -- split vertically 
+map('n', '<leader>wv', ':vs<CR>') -- split vertically
 
 -- better window movement
 map("n", "<leader>wH", '<C-w>H')

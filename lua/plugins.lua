@@ -25,6 +25,16 @@ return require('packer').startup({
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
+    -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
+    use {"neovim/nvim-lspconfig"}
+    use {
+      "kabouzeid/nvim-lspinstall",
+      event = "VimEnter",
+      config = function()
+        require("lspinstall").setup()
+      end
+    }
+
   end,
   config = {display = {open_fn = require"packer.util".float}}
 })
