@@ -11,6 +11,5 @@ O = {
 	  number = true,
 	  relative_number = true,
           clipboard = "unnamedplus",
-
-
+	  colorscheme = "zephyr",
 }
