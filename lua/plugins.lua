@@ -25,8 +25,26 @@ return require('packer').startup({
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
-    -- 
+    --
     use {'kyazdani42/nvim-tree.lua', config = 'require("plugins.nvim-tree").config()'}
+
+    -- Treesitter   use {
+    use {'nvim-treesitter/nvim-treesitter', config = 'require("plugins.treesitter")', run = ':TSUpdate'}
+
+    -- Pretty parentheses
+    use {"p00f/nvim-ts-rainbow", disable = not O.plugin.ts_rainbow.active}
+
+    -- Autotags <div>|</div>
+    use {"windwp/nvim-ts-autotag", event = "InsertEnter", disable = not O.plugin.ts_autotag.active}
+
+    -- Custom semantic text objects
+    use {"nvim-treesitter/nvim-treesitter-textobjects", disable = not O.plugin.ts_textobjects.active}
+
+    -- Smart text objects
+    use {"RRethy/nvim-treesitter-textsubjects", disable = not O.plugin.ts_textsubjects.active}
+
+    -- Text objects using hint labels
+    use {"mfussenegger/nvim-ts-hint-textobject", event = "BufRead", disable = not O.plugin.ts_hintobjects.active}
 
     -- LSP
     use {"neovim/nvim-lspconfig"}

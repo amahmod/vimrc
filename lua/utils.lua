@@ -48,6 +48,7 @@ Util.define_augroups = function(definitions)
   --       "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
   --     },
   --   }
+
   for group_name, definition in pairs(definitions) do
     vim.cmd("augroup " .. group_name)
     vim.cmd "autocmd!"

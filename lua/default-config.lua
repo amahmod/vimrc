@@ -26,10 +26,47 @@ O = {
   wrap_lines = false,
 
   lsp = {popup_border = "single"},
+  plugin = {
+    ts_context_commentstring = {active = false},
+    ts_hintobjects = {active = false},
+    ts_autotag = {active = true},
+    ts_rainbow = {active = false},
+    ts_textobjects = {active = true},
+    ts_textsubjects = {active = false}
+  },
   lang = {
     lua = {
       diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
       autoformat = true
     }
+  },
+  -- TODO: test textobject all keybindings
+  treesitter = {
+    ensure_installed = "all",
+    ignore_install = {"haskell"},
+    highlight = {enabled = true},
+    -- The below are for treesitter-textobjects plugin
+    textobj_prefixes = {
+      goto_next = "]", -- Go to next
+      goto_previous = "[", -- Go to previous
+      inner = "i", -- Select inside
+      outer = "a", -- Selct around
+      swap = "<leader>a" -- Swap with next
+    },
+    textobj_suffixes = {
+      -- Start and End respectively for the goto keys
+      -- for other keys it only uses the first
+      ["function"] = {"f", "F"},
+      ["class"] = {"m", "M"},
+      ["parameter"] = {"a", "A"},
+      ["block"] = {"k", "K"},
+      ["conditional"] = {"i", "I"},
+      ["call"] = {"c", "C"},
+      ["loop"] = {"l", "L"},
+      ["statement"] = {"s", "S"},
+      ["comment"] = {"/", "?"}
+    },
+    -- The below is for treesitter hint textobjects plugin
+    hint_labels = {"h", "j", "f", "d", "n", "v", "s", "l", "a"}
   }
 }
