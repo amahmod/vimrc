@@ -91,6 +91,40 @@ return require('packer').startup({
     use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
     use {"rafamadriz/friendly-snippets", event = "InsertEnter"}
 
+    -- Comments
+    use {
+      "terrortylor/nvim-comment",
+      event = "BufWinEnter",
+      config = function()
+        require('nvim_comment').setup()
+      end
+    }
+
+    -- comments in context
+    use {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      event = "BufRead",
+      disable = not O.plugin.ts_context_commentstring.active
+    }
+
+    -- Status Line and Bufferline
+    use {
+      "glepnir/galaxyline.nvim",
+      config = function()
+        require "plugins.galaxyline"
+      end
+      -- event = "VimEnter",
+    }
+    use {'akinsho/nvim-bufferline.lua', event = "BufWinEnter", config = 'require("plugins.bufferline")'}
+
+    -- Indentation
+    use {
+      'lukas-reineke/indent-blankline.nvim',
+      config = 'require("plugins.indent-blankline")',
+      event = "BufRead",
+      branch = 'lua'
+    }
+
   end,
   config = {display = {open_fn = require"packer.util".float}}
 })

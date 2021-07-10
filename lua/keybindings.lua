@@ -66,7 +66,6 @@ map('n', '<leader>ax', ':cclose<CR>')
 map('n', '<leader>aj', ':cnext<CR>')
 map('n', '<leader>ak', ':cprevious<CR>')
 
-
 ------------------------------------
 --  PLUGIN SPECIFIC KEYBINDINGS
 -----------------------------------
@@ -74,7 +73,6 @@ map('n', '<leader>ak', ':cprevious<CR>')
 -- Nvim-tree
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
 map('n', '<leader>?', ':NvimTreeFindFile<CR>')
-
 
 -- Telescope
 map('n', '<C-p>', ':Telescope find_files<CR>')
@@ -120,3 +118,10 @@ map("n", "<leader>gr", ':Gread<CR>')
 map("n", "<leader>gw", ':Gwrite<CR>')
 map("n", "<leader>gB", ':Git blame<Cr>')
 map("n", "<leader>gl", ':Git log<CR>')
+
+-- Nvim Bufferline
+map('n', '<leader>bn', ':BufferLineCycleNext<CR>')
+map('n', '<leader>bp', ':BufferLineCyclePrev<CR>')
+map('n', '<leader>be', ':BufferLineSortByExtension<CR>')
+map('n', '<leader>bd', ':BufferLineSortByDirectory<CR>')
+map('n', '<leader>bb', ':BufferLinePick<CR>')
