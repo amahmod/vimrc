@@ -12,7 +12,8 @@ if not require("utils").check_lsp_client_active "cssls" then
     on_attach = function(client)
       client.resolved_capabilities.document_formating = false
       require("lsp").common_on_attach(client)
-    end
+    end,
+    capabilities = capabilities
   }
 end
 
