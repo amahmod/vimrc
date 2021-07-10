@@ -45,23 +45,6 @@ return require('packer').startup({
       config = [[require('plugins.autopairs')]]
     }
 
-    -- Use fzy for telescope
-    use {"nvim-telescope/telescope-fzy-native.nvim", event = "BufRead", disable = not O.plugin.telescope_fzy.active}
-
-    -- Use project for telescope
-    use {
-      "nvim-telescope/telescope-project.nvim",
-      event = "BufRead",
-      setup = function()
-        vim.cmd [[packadd telescope.nvim]]
-      end,
-      disable = not O.plugin.telescope_project.active
-    }
-    use {
-      "nvim-telescope/telescope-media-files.nvim",
-      disable = not O.plugin.telescope_media.active
-    }
-
     -- Treesitter   use {
     use {'nvim-treesitter/nvim-treesitter', config = 'require("plugins.treesitter")', run = ':TSUpdate'}
 

@@ -32,10 +32,9 @@ O = {
     ts_autotag = {active = true},
     ts_rainbow = {active = false},
     ts_textobjects = {active = true},
-    ts_textsubjects = {active = false},
+    ts_textsubjects = {active = true},
     telescope_media = {active = true},
-    telescope_fzy = {active = false},
-    telescope_project = {active = false},
+    telescope_project = {active = true, base_dirs = {'~/workspace'}}
   },
   lang = {
     lua = {

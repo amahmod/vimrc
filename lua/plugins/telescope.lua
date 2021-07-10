@@ -1,7 +1,5 @@
 local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+if not status_ok then return end
 local actions = require "telescope.actions"
 -- if O.plugin.trouble.active then
 --     local trouble = require("trouble.providers.telescope")
@@ -11,14 +9,7 @@ local actions = require "telescope.actions"
 -- '--color=never',
 telescope.setup {
   defaults = {
-    find_command = {
-      "rg",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-    },
+    find_command = {"rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case"},
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = "  ",
@@ -30,8 +21,8 @@ telescope.setup {
       width = 0.75,
       prompt_position = "top",
       preview_cutoff = 120,
-      horizontal = { mirror = false },
-      vertical = { mirror = false },
+      horizontal = {mirror = false},
+      vertical = {mirror = false}
     },
     file_sorter = require("telescope.sorters").get_fzy_sorter,
     file_ignore_patterns = {},
@@ -39,10 +30,10 @@ telescope.setup {
     path_display = {"shorten"},
     winblend = 0,
     border = {},
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
     color_devicons = true,
     use_less = true,
-    set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+    set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
@@ -65,7 +56,7 @@ telescope.setup {
         -- ["<C-i>"] = actions.select_horizontal,
 
         -- Add up multiple actions
-        ["<CR>"] = actions.select_default + actions.center,
+        ["<CR>"] = actions.select_default + actions.center
 
         -- You can perform as many actions in a row as you like
         -- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
@@ -74,17 +65,21 @@ telescope.setup {
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         -- ["<c-t>"] = trouble.open_with_trouble,
-        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
         -- ["<C-i>"] = my_cool_custom_action,
-      },
-    },
+      }
+    }
   },
   extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
-    },
-  },
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
+    }
+  }
 }
 
--- require'telescope'.load_extension('project')
+-- if O.plugin.telescope_media.active then require('telescope').load_extension('media_files') end
+-- if O.plugin.telescope_project.active then require('telescope').load_extension('project') end
+-- if O.plugin.telescope_fzy.active then require('telescope').load_extension('fzy_native') end
