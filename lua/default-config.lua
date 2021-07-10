@@ -34,7 +34,8 @@ O = {
     ts_textobjects = {active = true},
     ts_textsubjects = {active = true},
     telescope_media = {active = true},
-    telescope_project = {active = true, base_dirs = {'~/workspace'}}
+    telescope_project = {active = true, base_dirs = {'~/workspace'}},
+    compe = {active = true}
   },
   lang = {
     lua = {

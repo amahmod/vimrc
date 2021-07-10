@@ -77,6 +77,17 @@ return require('packer').startup({
     use {'airblade/vim-gitgutter', config = 'require("plugins.gitgutter")'}
     use 'tpope/vim-fugitive'
 
+    -- Autocomplete
+    use {
+      "hrsh7th/nvim-compe",
+      event = "InsertEnter",
+      config = function()
+        require("plugins.compe")
+      end,
+      disable = not O.plugin.compe.active
+
+    }
+
   end,
   config = {display = {open_fn = require"packer.util".float}}
 })

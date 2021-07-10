@@ -8,7 +8,7 @@ cmd('let &titleold="' .. TERMINAL .. '"')
 cmd "set inccommand=split"
 cmd "set iskeyword+=-"
 cmd "set whichwrap+=<,>,[,],h,l"
-cmd('set shortmess+=c')                 --Don't pass messages to |ins-completion-menu|.
+cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 
 if O.transparent_window then
   cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
