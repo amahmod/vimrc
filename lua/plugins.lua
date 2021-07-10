@@ -85,8 +85,11 @@ return require('packer').startup({
         require("plugins.compe")
       end,
       disable = not O.plugin.compe.active
-
     }
+
+    -- Snippet
+    use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
+    use {"rafamadriz/friendly-snippets", event = "InsertEnter"}
 
   end,
   config = {display = {open_fn = require"packer.util".float}}
