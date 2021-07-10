@@ -20,6 +20,7 @@ return require('packer').startup({
     --  " Themes
     use 'gruvbox-community/gruvbox'
     use 'glepnir/zephyr-nvim'
+    use 'christianchiarulli/nvcode-color-schemes.vim'
 
     --  Icons
     use 'kyazdani42/nvim-web-devicons'
