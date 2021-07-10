@@ -38,10 +38,38 @@ O = {
     compe = {active = true}
   },
   lang = {
-    lua = {
+    css = {virtual_text = true},
+    docker = {},
+    efm = {},
+    elm = {},
+    emmet = {active = true},
+    elixir = {},
+    graphql = {},
+    go = {},
+    html = {},
+    java = {java_tools = {active = false}},
+    json = {diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}},
+    lua = {diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}},
+    php = {
+      format = {format = {default = "psr12"}},
+      environment = {php_version = "7.4"},
       diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
-      autoformat = true
-    }
+      filetypes = {"php", "phtml"}
+    },
+    sh = {
+      -- @usage can be 'shellcheck'
+      linter = "",
+      -- @usage can be 'shfmt'
+      diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+    },
+    svelte = {},
+    tsserver = {
+      -- @usage can be 'eslint'
+      linter = "",
+      diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+    },
+    vim = {},
+    yaml = {}
   },
   -- TODO: test textobject all keybindings
   treesitter = {

@@ -4,3 +4,4 @@
 - [ ] Auto complete first item on Enter
 - [ ] Check folke/trouble.nvim plugin
 - [ ] Check jose-elias-alvarez/nvim-lsp-ts-utils plugin
+- [ ] Autocomplete problem in css files
