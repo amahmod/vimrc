@@ -102,3 +102,21 @@ map('n', '<leader>fW', ':lua require("telescope.builtin").grep_string { search =
 map('n', '<leader>fl', ':Telescope current_buffer_fuzzy_find<CR>')
 map('n', '<leader>fu', ':Telescope colorscheme<CR>')
 
+--  Gitgutter
+map('n', '<leader>gn', ':GitGutterNextHunk<CR>')
+map('n', '<leader>gp', ':GitGutterPrevHunk<CR>')
+map('n', '<leader>gf', ':GitGutterFold<CR>')
+map('n', '<leader>gh', ':GitGutterLineHighlightsToggle<CR>')
+map('n', '<leader>gs', ':GitGutterStageHunk<CR>')
+map('n', '<leader>gu', ':GitGutterUndoHunk<CR>')
+map('n', '<leader>gP', ':GitGutterPreviewHunk<CR>')
+
+-- Fugitive
+map("n", "<leader>gg", ':Git<CR>')
+map("n", "<leader>gd", ':Git diff<CR>')
+map("n", "<leader>gD", ':Gdiffsplit<CR>')
+map("n", "<leader>ge", ':Gedit<CR>')
+map("n", "<leader>gr", ':Gread<CR>')
+map("n", "<leader>gw", ':Gwrite<CR>')
+map("n", "<leader>gB", ':Git blame<Cr>')
+map("n", "<leader>gl", ':Git log<CR>')

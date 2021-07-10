@@ -73,6 +73,10 @@ return require('packer').startup({
       end
     }
 
+    -- Git
+    use {'airblade/vim-gitgutter', config = 'require("plugins.gitgutter")'}
+    use 'tpope/vim-fugitive'
+
   end,
   config = {display = {open_fn = require"packer.util".float}}
 })
