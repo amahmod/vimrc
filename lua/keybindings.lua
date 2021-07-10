@@ -125,3 +125,28 @@ map('n', '<leader>bp', ':BufferLineCyclePrev<CR>')
 map('n', '<leader>be', ':BufferLineSortByExtension<CR>')
 map('n', '<leader>bd', ':BufferLineSortByDirectory<CR>')
 map('n', '<leader>bb', ':BufferLinePick<CR>')
+
+-- vim.bbye
+map('n', '<leader>x', ':Bdelete<CR>')
+
+-- EasiAlign
+map('n', 'ga', ':EasyAlign<CR>')
+map('v', 'ga', ':EasyAlign<CR>')
+map('x', 'ga', ':EasyAlign<CR>')
+
+-- Accelerated_jk
+map("n", "j", '<Plug>(accelerated_jk_gj)', {})
+map("n", "k", '<Plug>(accelerated_jk_gk)', {})
+
+-- Markdown Preview
+map('n', '<leader>tm', ':MarkdownPreviewToggle<CR>')
+
+-- Nvim colorizer
+map('n', '<leader>tC', ':ColorizerToggle<CR>')
+
+-- JsDoc
+map("n", "<leader>ad", ':JsDoc<CR>')
+
+-- Hop
+map('n', 's', ":HopChar2<cr>")
+map('n', 'S', ":HopWord<cr>")

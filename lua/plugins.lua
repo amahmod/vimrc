@@ -125,6 +125,48 @@ return require('packer').startup({
       branch = 'lua'
     }
 
+    -- Colorize colro codes
+    use {'norcalli/nvim-colorizer.lua', config = 'require("plugins.colorizer")'}
+
+    -- Document javascript code
+    use {'heavenshell/vim-jsdoc', ft = {'javascript', 'typescript', 'vue'}, run = 'make install'}
+
+    --  Markdown
+    use {
+      'iamcco/markdown-preview.nvim',
+      run = 'cd app && yarn install',
+      config = function()
+        vim.cmd [[ let g:mkdp_filetypes = ['markdown', 'vimwiki'] ]]
+      end
+    }
+
+    -- Close buffer without messing up the window layout
+    use {'moll/vim-bbye'}
+
+    -- Align texts easily
+    use 'junegunn/vim-easy-align'
+
+    -- Accelerate up-down moving by j and k
+    use 'rhysd/accelerated-jk'
+
+    -- Easily manage surroundings in pairs
+    use 'tpope/vim-surround'
+
+    -- Jump anywhere in the document
+    use {'phaazon/hop.nvim'}
+
+    -- Quick jump anywhere in the line
+    use {
+      'unblevable/quick-scope',
+      config = function()
+        vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
+        vim.g.qs_max_chars = 150
+      end
+    }
+
+    -- Easy movement between vim,tmux splits
+    use {'christoomey/vim-tmux-navigator'}
+
   end,
   config = {display = {open_fn = require"packer.util".float}}
 })
