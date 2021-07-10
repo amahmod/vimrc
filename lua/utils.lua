@@ -62,4 +62,10 @@ Util.define_augroups = function(definitions)
   end
 end
 
+Util.reload_config = function()
+  vim.cmd "source ~/.config/nvim/init.lua"
+  vim.cmd ":PackerCompile"
+  vim.cmd ":PackerInstall"
+end
+
 return Util
