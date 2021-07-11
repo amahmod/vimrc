@@ -67,7 +67,7 @@ return require('packer').startup({
       config = 'require("modules.treesitter")',
       run = ':TSUpdate'
     }
-    use {'lukas-reineke/indent-blankline.nvim', config = 'require("modules.indent-blankline")', branch = 'lua'}
+    use {'lukas-reineke/indent-blankline.nvim', config = 'require("modules.indent-blankline")'}
 
     --  Telescope
     use {
